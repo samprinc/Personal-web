@@ -1,27 +1,5 @@
-/* Contact Section */
-.contact { padding: 100px 0; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
-.contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-bottom: 4rem; }
-
-/* Contact Items */
-.contact-item { display: flex; align-items: center; margin-bottom: 1.5rem; padding: 1rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); animation: fadeInLeft 0.6s ease-out both; }
-.contact-item:hover { transform: translateX(10px); }
-.contact-icon { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; animation: pulse 2s infinite; }
-
-/* Form */
-.contact-form-container { background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-xl); animation: fadeInRight 0.8s ease-out; }
-.form-group { margin-bottom: 1.5rem; }
-.form-group input, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--gray-300); border-radius: var(--border-radius); background: var(--gray-100); transition: var(--transition); }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: white; }
-.submit-btn { width: 100%; padding: 1rem; margin-top: 1rem; }
-
-/* FAQ */
-.contact-faq { margin-top: 4rem; }
-.faq-item { background: white; border-radius: var(--border-radius); box-shadow: var(--shadow); margin-bottom: 1rem; }
-.faq-question { padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-.faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.faq-item.active .faq-answer { padding-bottom: 1.5rem; max-height: 500px; }
 /* =========================================
-   CONTACT PAGE STYLES
+   CONTACT PAGE STYLES (Responsive Fix)
    ========================================= */
 
 /* Section Layout */
@@ -35,6 +13,7 @@
     grid-template-columns: 1fr 1.5fr; /* Info takes less space than Form */
     gap: 4rem;
     margin-bottom: 6rem;
+    align-items: start; /* Prevents stretching if heights differ */
 }
 
 /* 1. Contact Information Column */
@@ -102,6 +81,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    word-break: break-all; /* Prevents long emails from overflowing */
 }
 
 .contact-link i {
@@ -119,7 +99,7 @@
 
 /* Availability Box */
 .contact-availability {
-    background: #f0fdf4; /* Light green bg */
+    background: #f0fdf4;
     border: 1px solid #bbf7d0;
     padding: 1.5rem;
     border-radius: var(--border-radius);
@@ -209,12 +189,11 @@
 }
 
 .form-group label {
-    display: block;
+    display: flex; /* Changed from block to flex for alignment */
+    align-items: center;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--dark);
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
 }
 
@@ -232,6 +211,7 @@
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition);
+    box-sizing: border-box; /* Crucial for responsiveness */
 }
 
 .form-group input:focus, 
@@ -303,9 +283,9 @@
     gap: 0.5rem;
 }
 
-/* Success Message (Hidden by default) */
+/* Success Message */
 .success-message {
-    display: none; /* JS will toggle this */
+    display: none;
     margin-top: 2rem;
     background: #ecfdf5;
     padding: 1.5rem;
@@ -381,7 +361,7 @@
     line-height: 1.6;
 }
 
-/* 4. THE CALL TO ACTION (CTA) - Redesigned */
+/* 4. CALL TO ACTION (CTA) */
 .contact-cta {
     background: linear-gradient(135deg, var(--dark) 0%, #1e1b4b 100%);
     border-radius: var(--border-radius-xl);
@@ -393,7 +373,6 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Decorative background elements */
 .contact-cta::before {
     content: '';
     position: absolute;
@@ -457,33 +436,63 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive Design */
+/* =========================================
+   RESPONSIVE FIXES
+   ========================================= */
+
+/* Tablet & Large Phone (900px and down) */
 @media (max-width: 900px) {
     .contact-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Switch to single column */
         gap: 3rem;
     }
     
     .contact-info {
-        order: 2; /* Move info below form on mobile */
+        order: 2; /* Info moves below form */
     }
     
     .contact-form-container {
-        order: 1;
+        order: 1; /* Form stays on top */
     }
 }
 
+/* Standard Mobile (768px and down) */
 @media (max-width: 768px) {
-    .cta-stats {
-        flex-direction: column;
-        gap: 2rem;
+    .contact-form-container {
+        padding: 2rem 1.5rem; /* Reduce padding heavily to prevent squishing */
     }
-    
+
+    .contact-cta {
+        padding: 3rem 1.5rem;
+    }
+
     .contact-cta h3 {
         font-size: 2rem;
     }
+
+    .cta-stats {
+        flex-direction: column; /* Stack stats vertically */
+        gap: 2rem;
+    }
+}
+
+/* Small Mobile (480px and down) */
+@media (max-width: 480px) {
+    .contact-form-container {
+        padding: 1.5rem 1rem; /* Even smaller padding for narrow screens */
+    }
+
+    .info-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
     
-    .contact-cta {
-        padding: 3rem 1.5rem;
+    /* Ensure inputs don't feel too cramped */
+    .form-group input, 
+    .form-group textarea {
+        padding: 0.8rem;
     }
 }
