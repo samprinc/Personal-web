@@ -1,46 +1,64 @@
-
-
-
 /* =========================================
    FUTURE ASPIRATIONS PAGE STYLES
    ========================================= */
 
 /* Section Spacing */
-.future {
+.future,
+.vision-statement,
+.career-goals,
+.sectors-section,
+.mentorship-goal,
+.influences-section,
+.faith-mission,
+.legacy-section {
     padding: 80px 0;
 }
 
-/* 1. Vision Statement (Hero-like Card) */
+/* 1. Vision Statement (Hero Card) */
 .vision-statement {
     background: white;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-xl);
-    padding: 3rem;
-    margin-bottom: 5rem;
+    padding: 4rem;
     display: flex;
     gap: 3rem;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
+    border-left: 6px solid var(--accent);
+    margin-bottom: 4rem;
     overflow: hidden;
-    border-left: 5px solid var(--accent);
+}
+
+/* Background decoration */
+.vision-statement::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
 }
 
 .vision-icon {
-    font-size: 5rem;
-    color: var(--primary);
-    background: var(--light);
-    width: 120px;
-    height: 120px;
+    font-size: 4rem;
+    color: var(--accent);
+    background: #fffbeb;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.1);
 }
 
 .vision-content h2 {
     color: var(--dark);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
 }
 
 .vision-text {
@@ -53,51 +71,48 @@
 .vision-highlights {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .highlight {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--gray-100);
-    padding: 0.5rem 1rem;
+    background: var(--light);
+    padding: 0.6rem 1.2rem;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9rem;
     color: var(--primary);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
 }
 
-/* 2. Timeline (Career Goals) */
-.career-goals {
-    margin-bottom: 6rem;
+.highlight:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-3px);
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
+.highlight i { font-size: 1rem; }
 
-.section-subtitle {
-    color: var(--accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
+/* 2. Career Goals Timeline */
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-subtitle { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 0.5rem; }
 
 .goals-timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 0;
 }
 
-/* The vertical line */
+/* Center Line */
 .timeline-path {
     position: absolute;
     width: 4px;
-    background: var(--gray-200);
+    background: linear-gradient(to bottom, var(--gray-200), var(--primary), var(--gray-200));
     top: 0;
     bottom: 0;
     left: 50%;
@@ -109,22 +124,16 @@
     position: relative;
     margin-bottom: 4rem;
     width: 50%;
+    clear: both;
 }
 
 /* Alternating Sides */
-.goal-milestone:nth-of-type(odd) {
-    left: 0;
-    padding-right: 3rem;
-    text-align: right;
-}
+.goal-milestone:nth-child(odd) { float: left; text-align: right; padding-right: 45px; }
+.goal-milestone:nth-child(even) { float: right; text-align: left; padding-left: 45px; margin-top: 3rem; }
 
-.goal-milestone:nth-of-type(even) {
-    left: 50%;
-    padding-left: 3rem;
-    text-align: left;
-}
+.goals-timeline::after { content: ""; display: table; clear: both; }
 
-/* The Icon on the Line */
+/* Milestone Icons */
 .milestone-icon {
     position: absolute;
     top: 0;
@@ -139,71 +148,55 @@
     color: var(--primary);
     z-index: 2;
     font-size: 1.2rem;
+    box-shadow: 0 0 0 5px var(--light);
 }
 
-.goal-milestone:nth-of-type(odd) .milestone-icon {
-    right: -25px;
-}
-
-.goal-milestone:nth-of-type(even) .milestone-icon {
-    left: -25px;
-}
+.goal-milestone:nth-child(odd) .milestone-icon { right: -25px; }
+.goal-milestone:nth-child(even) .milestone-icon { left: -25px; }
 
 /* Content Box */
 .milestone-content {
     background: white;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border-top: 4px solid var(--gray-200);
 }
 
-.milestone-content:hover {
+.goal-milestone:hover .milestone-content {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-top-color: var(--primary);
 }
 
-.milestone-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark);
-}
+.milestone-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 
 .milestone-metrics {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
-    justify-content: flex-end; /* Default for right align */
+    margin-top: 1.5rem;
+    justify-content: flex-end;
 }
 
-.goal-milestone:nth-of-type(even) .milestone-metrics {
-    justify-content: flex-start;
-}
+.goal-milestone:nth-child(even) .milestone-metrics { justify-content: flex-start; }
 
 .metric {
     text-align: center;
     background: var(--light);
-    padding: 0.5rem;
-    border-radius: var(--border-radius);
-    min-width: 80px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
 }
 
-.metric-value {
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 0.9rem;
-}
+.metric-value { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+.metric-label { font-size: 0.7rem; color: var(--gray-500); text-transform: uppercase; }
 
-.metric-label {
-    font-size: 0.7rem;
-    color: var(--gray-500);
-}
+/* Highlighted Milestone (e.g. 2028) */
+.goal-milestone.highlight .milestone-icon { background: var(--accent); color: white; border-color: var(--accent); }
+.goal-milestone.highlight .milestone-content { border-top-color: var(--accent); background: #fffbeb; }
 
 /* 3. Sectors Grid */
-.sectors-section {
-    margin-bottom: 6rem;
-}
-
 .sectors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -216,18 +209,24 @@
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
     transition: var(--transition);
-    border-top: 4px solid var(--secondary);
+    border: 1px solid var(--gray-100);
+    position: relative;
+    overflow: hidden;
 }
 
-.sector-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-}
+.sector-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--secondary); }
 
 .sector-icon {
     font-size: 2.5rem;
     color: var(--secondary);
     margin-bottom: 1.5rem;
+    background: rgba(124, 58, 237, 0.1);
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sector-challenges {
@@ -238,193 +237,167 @@
 }
 
 .challenge {
-    background: rgba(124, 58, 237, 0.1);
-    color: var(--secondary);
+    font-size: 0.8rem;
+    background: var(--light);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    color: var(--gray-600);
+    border: 1px solid var(--gray-200);
 }
 
-/* 4. Mentorship Mission */
+/* 4. Mentorship Mission (Dark Section) */
 .mentorship-goal {
-    background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: white;
-    padding: 4rem;
     border-radius: var(--border-radius-lg);
-    margin-bottom: 6rem;
-    position: relative;
+    box-shadow: var(--shadow-2xl);
     overflow: hidden;
+    position: relative;
 }
 
-.mentorship-goal .section-subtitle {
-    color: var(--accent);
+/* Background Pattern */
+.mentorship-goal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
 }
+
+.mentorship-goal .section-header h2, 
+.mentorship-goal .section-subtitle { color: white; }
+.mentorship-goal .section-subtitle { color: var(--accent); }
+
+.mentorship-content { position: relative; z-index: 2; }
 
 .mentorship-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 4rem;
 }
 
-.mentorship-stats .stat-card {
-    background: rgba(255, 255, 255, 0.1);
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
 }
 
-.mentorship-stats .stat-icon {
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
+.stat-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
 
-.mentorship-stats .stat-number {
-    font-size: 2.5rem;
-    color: white;
-}
-
-.mentorship-stats .stat-label {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-}
+.stat-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+.stat-number { font-size: 3rem; font-weight: 800; display: block; margin-bottom: 0.5rem; }
+.stat-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
 
 .mentorship-channels {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
 }
 
 .channel {
     display: flex;
     gap: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    align-items: flex-start;
     padding: 1rem;
-    border-radius: var(--border-radius);
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
 }
 
-.channel-icon {
-    font-size: 1.5rem;
-    color: var(--accent);
-}
-
-.channel-content h4 {
-    margin-bottom: 0.25rem;
-    color: white;
-}
-
-.channel-content p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
+.channel-icon { color: var(--primary); font-size: 1.5rem; margin-top: 5px; }
+.channel-content h4 { color: white; margin-bottom: 0.5rem; }
+.channel-content p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0; }
 
 /* 5. Influences */
 .influences-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 6rem;
 }
 
 .influence-card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
+    transition: var(--transition);
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+.influence-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
 .influence-image {
-    width: 60px;
-    height: 60px;
-    background: var(--gray-100);
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    background: var(--light);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gray-500);
-    font-size: 1.5rem;
-    flex-shrink: 0;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
 }
 
 .influence-role {
-    color: var(--primary);
-    font-size: 0.9rem;
+    color: var(--secondary);
     font-weight: 600;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
 .influence-quote {
-    background: var(--light);
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
     font-style: italic;
-    font-size: 0.9rem;
     color: var(--gray-600);
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     position: relative;
+    border-left: 3px solid var(--accent);
 }
 
-.quote-author {
-    text-align: right;
-    font-weight: 600;
-    font-style: normal;
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-}
+.quote-author { font-weight: 700; margin-top: 0.5rem; font-style: normal; font-size: 0.85rem; color: var(--dark); text-align: right; }
 
-.influence-impact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.impact-tag {
-    font-size: 0.75rem;
-    background: var(--gray-100);
-    padding: 0.2rem 0.6rem;
-    border-radius: 50px;
-}
+.influence-impact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+.impact-tag { font-size: 0.75rem; background: var(--gray-100); padding: 0.3rem 0.8rem; border-radius: 50px; color: var(--gray-600); }
 
 /* 6. Faith Pillars */
-.faith-mission {
-    margin-bottom: 6rem;
-}
-
 .faith-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
 .faith-pillar {
     background: white;
     padding: 2rem;
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
     text-align: center;
+    border: 1px solid var(--gray-200);
     transition: var(--transition);
 }
 
 .faith-pillar:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
+    border-color: var(--primary);
     box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
 }
 
-.faith-pillar .pillar-icon {
+.pillar-icon {
     font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 1rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
 }
+
+.pillar-content h4 { margin-bottom: 1rem; color: var(--dark); }
 
 .pillar-actions {
     margin-top: 1.5rem;
@@ -435,94 +408,74 @@
 }
 
 .action {
-    font-size: 0.8rem;
-    color: var(--gray-500);
+    font-size: 0.75rem;
     border: 1px solid var(--gray-200);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
+    color: var(--gray-500);
 }
 
 /* 7. Legacy Section */
 .legacy-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
     align-items: center;
-    gap: 3rem;
     background: white;
     padding: 3rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-xl);
 }
 
-.legacy-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
 .image-placeholder-small {
     width: 250px;
     height: 250px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 5rem;
-    box-shadow: var(--shadow-lg);
-    animation: pulse 3s infinite;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
 }
 
-.legacy-items {
-    flex: 2;
-}
-
-.legacy-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
+.legacy-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+.legacy-item:last-child { margin-bottom: 0; }
 
 .legacy-icon {
-    font-size: 1.5rem;
-    color: var(--success);
-    background: rgba(16, 185, 129, 0.1);
     width: 50px;
     height: 50px;
+    background: #ecfdf5;
+    color: var(--success);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
 /* 8. CTA */
 .future-cta {
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-    border-radius: var(--border-radius-lg);
     margin-top: 4rem;
-}
-
-.future-cta h3 {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: var(--border-radius-lg);
+    padding: 5rem 2rem;
+    text-align: center;
     color: white;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
 }
 
-.future-cta p {
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 700px;
-    margin: 0 auto 1rem;
-}
+.cta-content { max-width: 700px; margin: 0 auto; }
+.future-cta h3 { font-size: 2.5rem; margin-bottom: 1.5rem; color: white; }
+.future-cta p { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
 
 .cta-buttons {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .future-cta .btn-secondary {
@@ -535,60 +488,46 @@
     color: var(--primary);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE (Mobile Timeline Fix)
+   ========================================= */
+@media (max-width: 900px) {
     .vision-statement {
         flex-direction: column;
-        text-align: center;
         padding: 2rem;
+        text-align: center;
     }
 
-    .vision-highlights {
-        justify-content: center;
-    }
-
-    /* Collapse Timeline to Single Column on Mobile */
-    .timeline-path {
-        left: 20px;
-    }
-
+    /* Timeline Fixes */
+    .timeline-path { left: 30px; transform: none; }
+    
     .goal-milestone {
         width: 100%;
-        padding-left: 3rem;
-        padding-right: 0;
+        float: none;
         text-align: left;
+        padding-left: 80px;
+        padding-right: 0;
     }
 
-    .goal-milestone:nth-of-type(odd) {
-        left: 0;
+    .goal-milestone:nth-child(odd),
+    .goal-milestone:nth-child(even) {
+        float: none;
         text-align: left;
-        padding-left: 3rem;
+        padding-left: 80px;
         padding-right: 0;
-    }
-    
-    .goal-milestone:nth-of-type(even) {
-        left: 0;
+        margin-top: 3rem;
     }
 
     .milestone-icon {
-        left: -5px !important; /* Force left position on mobile */
+        left: 0 !important;
         right: auto !important;
     }
 
-    .milestone-metrics {
-        justify-content: flex-start;
-    }
+    .milestone-metrics { justify-content: flex-start !important; }
 
-    .legacy-content {
-        flex-direction: column;
-        padding: 1.5rem;
-    }
+    /* Other Grids */
+    .legacy-content { grid-template-columns: 1fr; text-align: center; }
+    .legacy-item { flex-direction: column; align-items: center; }
     
-    .legacy-image {
-        margin-bottom: 2rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
+    .cta-buttons { flex-direction: column; }
 }
