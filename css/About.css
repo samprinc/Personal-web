@@ -1,0 +1,51 @@
+/* About Cards (Childhood/Education) */
+.about { padding: 100px 0; }
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+.about-card { background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); text-align: center; transition: var(--transition); position: relative; overflow: hidden; animation: fadeInUp 0.8s ease-out both; }
+.about-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+.about-card:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
+.about-card:hover:before { transform: scaleX(1); }
+.about-card .icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: inline-block; }
+.about-card .icon i { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; animation: bounce 2s infinite; }
+
+/* Stats Section */
+.stats { padding: 80px 0; background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%); }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+.stat-card { background: white; padding: 2rem; border-radius: var(--border-radius-lg); text-align: center; transition: var(--transition); box-shadow: var(--shadow); }
+.stat-card:hover { transform: translateY(-5px); }
+.stat-number { font-size: 3rem; font-weight: 700; color: var(--primary); }
+
+/* Bible Verse */
+.bible-verse { padding: 80px 0; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); position: relative; }
+.bible-verse blockquote { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.8rem; font-style: italic; color: var(--dark); background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-xl); position: relative; }
+.bible-verse .fa-quote-left, .bible-verse .fa-quote-right { position: absolute; font-size: 3rem; opacity: 0.2; color: var(--accent); }
+.bible-verse .fa-quote-left { top: 1rem; left: 1rem; }
+.bible-verse .fa-quote-right { bottom: 1rem; right: 1rem; }
+
+/* Ensure this is in css/About.css OR add to css/Home.css */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.about-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.about-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}

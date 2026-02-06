@@ -1,0 +1,340 @@
+/* =========================================
+   CHILDHOOD PAGE STYLES
+   ========================================= */
+
+/* Section Spacing */
+.childhood, 
+.early-curiosity, 
+.values-section, 
+.impact-section {
+    padding: 80px 0;
+}
+
+/* 1. The Timeline (Story Flow) */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* The vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--gray-200);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 50%;
+    clear: both;
+}
+
+/* Alternating Sides */
+.timeline-item:nth-child(odd) {
+    float: left;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    float: right;
+    padding-left: 3rem;
+    text-align: left;
+    margin-top: 3rem; /* Staggered effect */
+}
+
+/* Clear floats */
+.timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Timeline Icons (The center dots) */
+.timeline-icon {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 4px solid var(--accent); /* Accent color for childhood warmth */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1.2rem;
+    z-index: 2;
+    box-shadow: 0 0 0 5px white; /* Gap effect */
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -25px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -25px;
+}
+
+/* Content Box */
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--accent);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 1.25rem;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 0.25rem;
+}
+
+.timeline-tags {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end; /* Default right align */
+    flex-wrap: wrap;
+}
+
+.timeline-item:nth-child(even) .timeline-tags {
+    justify-content: flex-start;
+}
+
+.tag {
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+}
+
+/* 2. Early Curiosity Section */
+.early-curiosity {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); /* Warm yellow bg */
+}
+
+.early-curiosity h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark);
+}
+
+.curiosity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.curiosity-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.curiosity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.curiosity-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent) 0%, #fcd34d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.curiosity-card h4 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.skill-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--gray-200);
+    border-radius: 3px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+/* 3. Values Section */
+.values-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.value-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* 4. Impact Section */
+.impact-section {
+    background: var(--dark);
+    color: white;
+}
+
+.impact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.impact-content h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #fff, var(--gray-400));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.impact-content p {
+    color: var(--gray-400);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.impact-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.image-placeholder-small {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--accent);
+    animation: pulse 3s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Collapse Timeline */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 3.5rem;
+        padding-right: 0;
+        text-align: left;
+        float: none;
+        margin-top: 3rem;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-top: 3rem;
+    }
+
+    .timeline-icon {
+        left: -5px !important; /* Force left side */
+        right: auto !important;
+    }
+
+    .timeline-tags {
+        justify-content: flex-start;
+    }
+
+    /* Grid Adjustments */
+    .curiosity-grid, .values-grid {
+        grid-template-columns: 1fr;
+    }
+}

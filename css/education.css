@@ -1,0 +1,309 @@
+/* =========================================
+   EDUCATION PAGE STYLES (Responsive Fix)
+   ========================================= */
+
+/* Section Spacing */
+.education-timeline, 
+.mathematics-passion, 
+.extracurricular, 
+.education-philosophy {
+    padding: 80px 0;
+}
+
+/* 1. Education Timeline - Desktop Default */
+.education-timeline {
+    position: relative;
+    background: linear-gradient(to bottom, var(--light) 0%, white 100%);
+    overflow: hidden; /* Prevents horizontal scroll if animations slide out */
+}
+
+.education-path {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* The Vertical Line (Desktop: Center) */
+.path-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gray-200);
+    border-radius: 2px;
+    top: 0;
+}
+
+/* Timeline Items (Desktop: 50% width, alternating) */
+.education-stage {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 50%;
+    clear: both;
+}
+
+/* Odd items go Left */
+.education-stage:nth-child(odd) {
+    float: left;
+    text-align: right;
+    padding-right: 40px; /* Space for the icon */
+}
+
+/* Even items go Right */
+.education-stage:nth-child(even) {
+    float: right;
+    text-align: left;
+    padding-left: 40px; /* Space for the icon */
+    margin-top: 3rem; /* Stagger effect */
+}
+
+/* Clear floats */
+.education-path::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The Icon Dots */
+.stage-icon {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+    z-index: 2;
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.1); /* Glow effect */
+}
+
+/* Desktop Icon Positioning */
+.education-stage:nth-child(odd) .stage-icon {
+    right: -30px; /* Half of 60px width */
+}
+
+.education-stage:nth-child(even) .stage-icon {
+    left: -30px; /* Half of 60px width */
+}
+
+/* Content Box Styling */
+.stage-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+}
+
+.stage-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* The Triangle Arrows (Desktop) */
+.stage-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.education-stage:nth-child(odd) .stage-content::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.education-stage:nth-child(even) .stage-content::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Text Styles */
+.stage-header h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 1.25rem;
+}
+
+.stage-year {
+    display: inline-block;
+    background: var(--gray-100);
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Skills Tags */
+.stage-skills {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.education-stage:nth-child(odd) .stage-skills {
+    justify-content: flex-end;
+}
+
+.skill-tag {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+}
+
+/* Achievements */
+.stage-achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.education-stage:nth-child(odd) .achievement {
+    justify-content: flex-end;
+}
+
+.achievement i { color: var(--accent); }
+.highlight { font-weight: 600; color: var(--dark); }
+
+/* 2. University Progress Bar */
+.current-progress { margin: 1.5rem 0; }
+.progress-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+.progress-bar { height: 10px; background: var(--gray-200); border-radius: 5px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 5px; }
+
+/* Modules Grid */
+.course-modules { margin-top: 1.5rem; text-align: left; }
+.course-modules h4 { margin-bottom: 1rem; font-size: 1rem; color: var(--gray-600); }
+.modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; }
+.module-card { background: var(--gray-50); padding: 0.8rem; border-radius: var(--border-radius); display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; border: 1px solid var(--gray-200); }
+.module-card i { color: var(--secondary); }
+
+/* 3. Mathematics Passion */
+.mathematics-passion { background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%); color: white; }
+.math-content { max-width: 800px; margin: 0 auto; }
+.math-header { display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; }
+.math-icon { font-size: 4rem; color: var(--accent); background: rgba(255, 255, 255, 0.1); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.math-subtitle { color: var(--gray-400); font-size: 1.2rem; margin-bottom: 0; }
+.math-details p { color: var(--gray-300); font-size: 1.1rem; margin-bottom: 3rem; }
+.math-skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.math-skill { margin-bottom: 1.5rem; }
+.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--gray-300); }
+.math-skill .skill-bar { background: rgba(255, 255, 255, 0.1); }
+.math-skill .skill-fill { background: var(--accent); }
+.math-achievement { background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: var(--border-radius); display: flex; gap: 1.5rem; align-items: flex-start; margin-top: 3rem; border-left: 4px solid var(--success); }
+.math-achievement i { font-size: 2rem; color: var(--success); }
+
+/* 4. Extracurricular */
+.activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.activity-card { background: white; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); overflow: hidden; transition: var(--transition); }
+.activity-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.activity-icon { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+.activity-content { padding: 1.5rem; text-align: center; }
+.activity-role { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
+.activity-skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+.skill-badge { background: var(--gray-100); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 50px; color: var(--gray-600); }
+
+/* 5. Philosophy */
+.education-philosophy { background: var(--gray-50); }
+.philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin: 3rem 0; }
+.philosophy-item { text-align: center; padding: 1.5rem; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); }
+.philosophy-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 1rem; }
+.university-mission { background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); text-align: center; border-top: 5px solid var(--primary); }
+.mission-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
+.mission-stat { text-align: center; }
+.mission-stat .stat-number { font-size: 2rem; font-weight: 700; color: var(--dark); }
+.mission-stat .stat-label { font-size: 0.85rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; }
+
+/* =========================================
+   RESPONSIVE FIXES (MOBILE)
+   ========================================= */
+@media (max-width: 900px) {
+    /* 1. Reset the Timeline Layout to Single Column */
+    .path-line {
+        left: 30px; /* Move line to the far left */
+        transform: none; /* Remove centering transform */
+    }
+
+    .education-stage {
+        width: 100%;
+        float: none; /* Disable zig-zag */
+        padding-left: 80px; /* Make room for icon + line */
+        padding-right: 0;
+        text-align: left; /* Align everything left */
+        margin-top: 3rem;
+    }
+
+    /* Target BOTH even and odd items to look the same */
+    .education-stage:nth-child(odd),
+    .education-stage:nth-child(even) {
+        float: none;
+        text-align: left;
+        padding-left: 80px;
+        padding-right: 0;
+        margin-top: 3rem;
+    }
+
+    /* 2. Fix Icon Position */
+    .stage-icon {
+        left: 0 !important; /* Force icons to the left line */
+        right: auto !important; /* Override desktop styles */
+    }
+
+    /* Adjust Odd items specifically to overwrite desktop right-align */
+    .education-stage:nth-child(odd) .stage-icon {
+        left: 0 !important;
+        right: auto !important;
+    }
+
+    /* 3. Fix Triangle Arrows */
+    /* Force all arrows to point Left */
+    .stage-content::before {
+        left: -10px !important;
+        right: auto !important;
+        border-width: 10px 10px 10px 0 !important; /* Shape of right-pointing arrow */
+        border-color: transparent white transparent transparent !important;
+    }
+
+    /* 4. Fix Inner Content Alignment */
+    .stage-skills, 
+    .stage-achievements, 
+    .achievement {
+        justify-content: flex-start !important; /* Align tags left */
+    }
+
+    /* 5. Math Section */
+    .math-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .math-skills {
+        grid-template-columns: 1fr; /* Stack skills */
+    }
+}

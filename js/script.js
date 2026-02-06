@@ -1,34 +1,50 @@
-// Enhanced JavaScript with Modern Animations
+/**
+ * Princ Sam Portfolio - Main JavaScript
+ * Enhanced for performance, modularity, and error prevention.
+ */
 
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functions
+// =========================================
+// 1. INITIALIZATION
+// =========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Core Layout
     initNavbar();
-    initContactForm();
-    initScrollAnimations();
-    initSkillLevels();
-    initHoverEffects();
-    initParallax();
-    initStatsAnimation();
-    initFAQ();
     initCurrentYear();
-    initTypewriter();
     initScrollToTop();
     initPageTransitions();
+
+    // Components (Run only if elements exist)
+    if (document.getElementById('contactForm')) initContactForm();
+    if (document.querySelector('.faq-item')) initFAQ();
+    if (document.querySelector('.hero')) initParallax();
+    if (document.querySelector('.hero-quote')) initTypewriter();
+
+    // Animations
+    initScrollAnimations(); // Handles Fade-in, Skill Bars, and Stat Counters
+    initHoverEffects();
 });
 
-// Enhanced Navbar functionality
+// =========================================
+// 2. NAVIGATION & LAYOUT
+// =========================================
+
+/**
+ * Handles Mobile Menu and Active Link Highlighting
+ */
 function initNavbar() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const navbar = document.querySelector('.navbar');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle Mobile Menu
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
-            // Add animation to menu items
+
+            // Staggered animation for menu items
             const menuItems = navLinks.querySelectorAll('li');
             menuItems.forEach((item, index) => {
                 if (navLinks.classList.contains('active')) {
@@ -39,38 +55,39 @@ function initNavbar() {
             });
         });
     }
-    
-    // Close mobile menu when clicking on a link
-    const navLinksItems = document.querySelectorAll('.nav-links a');
+
+    // Close menu when a link is clicked
     navLinksItems.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+        link.addEventListener('click', () => {
+            if (hamburger) hamburger.classList.remove('active');
+            if (navLinks) navLinks.classList.remove('active');
         });
     });
-    
-    // Enhanced navbar scroll effect
-    window.addEventListener('scroll', function() {
+
+    // Sticky Navbar & Active Section Highlight
+    window.addEventListener('scroll', () => {
+        // Sticky effect
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        // Add active class to current section in viewport
+
+        // Active Link Highlighting
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 100;
-        
+        const scrollPos = window.scrollY + 150; // Offset for navbar height
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
+            const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-            
-            if (scrollPos >= sectionTop && scrollPos <= sectionTop + sectionHeight) {
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 navLinksItems.forEach(link => {
                     link.classList.remove('active');
+                    // Check if link href matches section ID or is Home link for 'about' section
                     if (link.getAttribute('href') === `#${sectionId}` || 
-                        (sectionId === 'about' && link.getAttribute('href') === 'index.html')) {
+                       (sectionId === 'about' && link.getAttribute('href') === 'index.html')) {
                         link.classList.add('active');
                     }
                 });
@@ -79,522 +96,335 @@ function initNavbar() {
     });
 }
 
-// Enhanced Contact Form Validation with animations
-function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
+/**
+ * Updates the Copyright Year in Footer
+ */
+function initCurrentYear() {
+    const yearElements = document.querySelectorAll('#currentYear');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => el.textContent = currentYear);
+}
+
+/**
+ * Scroll to Top Button Logic
+ */
+function initScrollToTop() {
+    // Create button dynamically
+    const scrollBtn = document.createElement('button');
+    scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    scrollBtn.className = 'scroll-to-top';
+    // Inline styles for basic positioning (moved mostly to CSS in production)
+    scrollBtn.style.cssText = `
+        position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+        background: linear-gradient(135deg, var(--primary, #2563eb) 0%, var(--secondary, #7c3aed) 100%);
+        color: white; border: none; border-radius: 50%; cursor: pointer;
+        display: none; align-items: center; justify-content: center;
+        font-size: 1.2rem; z-index: 999; transition: all 0.3s ease;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    `;
     
-    if (!contactForm) return;
-    
-    // Character counter for message
-    const messageInput = document.getElementById('message');
-    const charCount = document.getElementById('charCount');
-    
-    if (messageInput && charCount) {
-        messageInput.addEventListener('input', function() {
-            charCount.textContent = this.value.length;
-            
-            // Add typing animation
-            if (this.value.length > 0) {
-                this.style.animation = 'none';
-                setTimeout(() => {
-                    this.style.animation = 'typeEffect 0.3s ease';
-                }, 10);
-            }
-        });
-    }
-    
-    // Add input focus animations
-    const formInputs = contactForm.querySelectorAll('input, textarea');
-    formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            if (!this.value) {
-                this.parentElement.classList.remove('focused');
-            }
-        });
+    document.body.appendChild(scrollBtn);
+
+    // Show/Hide logic
+    window.addEventListener('scroll', () => {
+        scrollBtn.style.display = (window.pageYOffset > 300) ? 'flex' : 'none';
     });
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Show loading state
-        const submitBtn = this.querySelector('.submit-btn');
-        submitBtn.classList.add('loading');
-        
-        // Reset previous errors
-        clearErrors();
-        
-        // Get form values
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        let isValid = true;
-        
-        // Validate name with animation
-        if (name === '') {
-            showError('nameError', 'Please enter your name');
-            shakeElement('name');
-            isValid = false;
-        } else if (name.length < 2) {
-            showError('nameError', 'Name must be at least 2 characters');
-            shakeElement('name');
-            isValid = false;
-        }
-        
-        // Validate email with animation
-        if (email === '') {
-            showError('emailError', 'Please enter your email');
-            shakeElement('email');
-            isValid = false;
-        } else if (!isValidEmail(email)) {
-            showError('emailError', 'Please enter a valid email address');
-            shakeElement('email');
-            isValid = false;
-        }
-        
-        // Validate message with animation
-        if (message === '') {
-            showError('messageError', 'Please enter your message');
-            shakeElement('message');
-            isValid = false;
-        } else if (message.length < 10) {
-            showError('messageError', 'Message must be at least 10 characters');
-            shakeElement('message');
-            isValid = false;
-        }
-        
-        // If form is valid, show success message with celebration
-        if (isValid) {
-            // Simulate API call delay
-            setTimeout(() => {
-                celebrateForm();
-                showSuccessMessage();
-                submitBtn.classList.remove('loading');
-                
-                // Reset form after 3 seconds
-                setTimeout(() => {
-                    contactForm.reset();
-                    document.getElementById('formSuccess').style.display = 'none';
-                    if (charCount) charCount.textContent = '0';
-                }, 5000);
-            }, 1500);
-        } else {
-            submitBtn.classList.remove('loading');
-        }
+
+    // Smooth scroll up
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-// Helper function to validate email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+// =========================================
+// 3. ANIMATIONS & EFFECTS
+// =========================================
 
-// Helper function to show error messages with animation
-function showError(elementId, message) {
-    const errorElement = document.getElementById(elementId);
-    errorElement.textContent = message;
-    errorElement.style.display = 'block';
-    errorElement.style.animation = 'shake 0.5s ease';
-}
-
-// Helper function to shake element
-function shakeElement(elementId) {
-    const element = document.getElementById(elementId);
-    element.style.animation = 'shake 0.5s ease';
-    setTimeout(() => {
-        element.style.animation = '';
-    }, 500);
-}
-
-// Helper function to clear all errors
-function clearErrors() {
-    const errorElements = document.querySelectorAll('.error-message');
-    errorElements.forEach(element => {
-        element.textContent = '';
-        element.style.display = 'none';
-        element.style.animation = '';
-    });
-}
-
-// Celebration animation for form submission
-function celebrateForm() {
-    const form = document.getElementById('contactForm');
-    const confettiCount = 30;
-    
-    for (let i = 0; i < confettiCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.backgroundColor = getRandomColor();
-        confetti.style.width = '10px';
-        confetti.style.height = '10px';
-        confetti.style.position = 'absolute';
-        confetti.style.borderRadius = '50%';
-        confetti.style.zIndex = '1000';
-        confetti.style.animation = `confettiFall ${Math.random() * 1 + 1}s ease-out forwards`;
-        
-        form.appendChild(confetti);
-        
-        // Remove confetti after animation
-        setTimeout(() => {
-            if (confetti.parentNode) {
-                confetti.remove();
-            }
-        }, 2000);
-    }
-}
-
-function getRandomColor() {
-    const colors = ['#2563eb', '#7c3aed', '#f59e0b', '#10b981', '#ef4444'];
-    return colors[Math.floor(Math.random() * colors.length)];
-}
-
-// Helper function to show success message with animation
-function showSuccessMessage() {
-    const successElement = document.getElementById('formSuccess');
-    successElement.style.display = 'flex';
-    successElement.style.animation = 'fadeInUp 0.6s ease-out';
-    
-    // Scroll to success message
-    successElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Enhanced scroll animations
+/**
+ * Unified Intersection Observer for Scroll Animations
+ * Handles: Fade-ins, Skill Bars, and Number Counters
+ */
 function initScrollAnimations() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.15 // Trigger when 15% of element is visible
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
+                const target = entry.target;
                 
-                // Animate skill bars
-                if (entry.target.classList.contains('animate-progress')) {
-                    const skillFill = entry.target.querySelector('.skill-fill');
-                    if (skillFill) {
-                        const width = skillFill.getAttribute('data-width') || '0';
+                // 1. Add general animation class
+                target.classList.add('animated');
+
+                // 2. Handle Skill Bars (Width animation)
+                if (target.classList.contains('animate-progress') || target.querySelector('.skill-fill')) {
+                    const skillFill = target.querySelector('.skill-fill') || target;
+                    // Only animate if it hasn't been animated yet
+                    if (!skillFill.style.width) { 
+                        const width = skillFill.getAttribute('data-width') || skillFill.parentElement.previousElementSibling.lastElementChild.innerText;
+                        // Small delay for visual effect
                         setTimeout(() => {
-                            skillFill.style.width = width + '%';
-                        }, 300);
+                            skillFill.style.width = width.includes('%') ? width : width + '%';
+                        }, 200);
                     }
                 }
-                
-                // Animate stats
-                if (entry.target.classList.contains('stat-number')) {
-                    const finalValue = parseInt(entry.target.getAttribute('data-count') || '0');
-                    animateCounter(entry.target, finalValue);
+
+                // 3. Handle Stat Counters (Number counting)
+                if (target.classList.contains('stat-number') && !target.classList.contains('counted')) {
+                    const finalValue = parseInt(target.getAttribute('data-count') || '0');
+                    animateCounter(target, finalValue);
+                    target.classList.add('counted'); // Prevent re-animating
                 }
+
+                // Stop observing once animated (optional, for performance)
+                observer.unobserve(target);
             }
         });
     }, observerOptions);
-    
-    // Observe all elements that should animate on scroll
-    const animatedElements = document.querySelectorAll(
-        '.animate-on-scroll, .animate-progress, .stat-number, .about-card, .skill-category-card, .soft-skill-card, .hobby-card, .faq-item, .contact-item'
+
+    // Select elements to observe
+    const elementsToAnimate = document.querySelectorAll(
+        '.animate-on-scroll, .skill-fill, .stat-number, .about-card, .skill-category-card, .soft-skill-card, .hobby-card, .contact-item, .goal-milestone, .education-stage'
     );
-    
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
+
+    elementsToAnimate.forEach(el => observer.observe(el));
 }
 
-// Animate counter for stats
+/**
+ * Logic for counting numbers up
+ */
 function animateCounter(element, finalValue) {
-    let current = 0;
-    const increment = finalValue / 50;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= finalValue) {
-            current = finalValue;
-            clearInterval(timer);
+    let startTimestamp = null;
+    const duration = 2000; // 2 seconds
+
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        
+        // Easing function for smooth stop
+        const easeOutQuad = progress * (2 - progress); 
+        
+        element.textContent = Math.floor(easeOutQuad * finalValue) + (finalValue >= 1000 ? '+' : ''); // Add + for large numbers if needed
+
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            element.textContent = finalValue + (element.getAttribute('data-count').includes('+') ? '+' : '');
         }
-        element.textContent = Math.floor(current);
-    }, 30);
+    };
+
+    window.requestAnimationFrame(step);
 }
 
-// Enhanced skill level animations
-function initSkillLevels() {
-    const skillLevels = document.querySelectorAll('.skill-level');
+/**
+ * Typewriter effect for Hero Quote
+ */
+function initTypewriter() {
+    const heroQuote = document.querySelector('.hero-quote');
+    if (!heroQuote) return;
+
+    const text = heroQuote.textContent.trim();
+    heroQuote.textContent = '';
+    heroQuote.style.opacity = '1'; // Ensure it's visible before typing
+
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            heroQuote.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 50); // Speed of typing
+        }
+    }
     
-    skillLevels.forEach(level => {
-        const dots = level.querySelectorAll('.level-dot');
-        
-        dots.forEach((dot, index) => {
-            // Add sequential animation
-            setTimeout(() => {
-                if (dot.classList.contains('active')) {
-                    dot.style.animation = 'dotPulse 1.5s infinite';
-                }
-            }, index * 200);
-        });
-    });
+    // Delay start slightly
+    setTimeout(type, 800);
 }
 
-// Enhanced hover effects
-function initHoverEffects() {
-    // Add hover effects to all cards
-    const cards = document.querySelectorAll('.about-card, .skill-category-card, .hobby-card, .faq-item, .stat-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)';
-        });
-    });
-    
-    // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.btn');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const x = e.clientX - this.getBoundingClientRect().left;
-            const y = e.clientY - this.getBoundingClientRect().top;
-            
-            const ripple = document.createElement('span');
-            ripple.style.position = 'absolute';
-            ripple.style.background = 'rgba(255, 255, 255, 0.5)';
-            ripple.style.borderRadius = '50%';
-            ripple.style.transform = 'scale(0)';
-            ripple.style.animation = 'ripple 0.6s linear';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                if (ripple.parentNode) {
-                    ripple.remove();
-                }
-            }, 600);
-        });
-    });
-}
-
-// Parallax effect for hero section
+/**
+ * Mouse Move / Parallax Effects
+ */
 function initParallax() {
     const hero = document.querySelector('.hero');
-    
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            hero.style.transform = `translate3d(0, ${rate}px, 0)`;
-        });
-    }
-}
-
-// Animate stats on homepage
-function initStatsAnimation() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-    
-    statNumbers.forEach(stat => {
-        const finalValue = parseInt(stat.getAttribute('data-count'));
-        if (!isNaN(finalValue)) {
-            animateCounter(stat, finalValue);
-        }
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if (hero) hero.style.transform = `translateY(${scrolled * 0.3}px)`; // Slow parallax
     });
 }
 
-// FAQ functionality
+function initHoverEffects() {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function(e) {
+            // Optional: Complex hover logic can go here
+        });
+    });
+}
+
+// =========================================
+// 4. INTERACTIVE COMPONENTS (FAQ & FORM)
+// =========================================
+
+/**
+ * FAQ Accordion Logic
+ */
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
         question.addEventListener('click', () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
+            const isActive = item.classList.contains('active');
             
-            // Toggle current FAQ item
-            item.classList.toggle('active');
+            // Close all others (Accordion style)
+            faqItems.forEach(other => {
+                other.classList.remove('active');
+                const answer = other.querySelector('.faq-answer');
+                const icon = other.querySelector('i');
+                if(answer) answer.style.maxHeight = null;
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            });
+
+            // Toggle clicked
+            if (!isActive) {
+                item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('i');
+                if(answer) answer.style.maxHeight = answer.scrollHeight + "px";
+                if(icon) icon.style.transform = 'rotate(180deg)';
+            }
         });
     });
 }
 
-// Update current year in footer
-function initCurrentYear() {
-    const yearElements = document.querySelectorAll('#currentYear');
-    const currentYear = new Date().getFullYear();
-    
-    yearElements.forEach(element => {
-        element.textContent = currentYear;
+/**
+ * Contact Form Validation & Submission Simulation
+ */
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+    const submitBtn = form.querySelector('.submit-btn');
+    const successMsg = document.getElementById('formSuccess');
+
+    // 1. Character Counter
+    if (messageInput && charCount) {
+        messageInput.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
+            if (this.value.length > 500) {
+                charCount.style.color = 'red';
+            } else {
+                charCount.style.color = '#94a3b8';
+            }
+        });
+    }
+
+    // 2. Form Submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Basic Validation
+        let isValid = true;
+        clearErrors();
+
+        if (nameInput.value.length < 2) {
+            showError('nameError', 'Name must be at least 2 characters.');
+            isValid = false;
+        }
+
+        if (!isValidEmail(emailInput.value)) {
+            showError('emailError', 'Please enter a valid email address.');
+            isValid = false;
+        }
+
+        if (messageInput.value.length < 10) {
+            showError('messageError', 'Message must be at least 10 characters.');
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Simulate Sending
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                form.reset();
+                if(charCount) charCount.textContent = '0';
+                
+                // Show Success
+                successMsg.style.display = 'flex';
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Confetti Effect
+                celebrateForm();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 5000);
+
+            }, 2000);
+        }
     });
 }
 
-// Typewriter effect for hero text
-function initTypewriter() {
-    const heroQuote = document.querySelector('.hero-quote');
-    
-    if (heroQuote && !heroQuote.classList.contains('animated')) {
-        const text = heroQuote.textContent;
-        heroQuote.textContent = '';
-        heroQuote.classList.add('animated');
-        
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                heroQuote.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        // Start typing after a short delay
-        setTimeout(typeWriter, 1000);
+// =========================================
+// 5. HELPER FUNCTIONS
+// =========================================
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showError(id, msg) {
+    const el = document.getElementById(id);
+    if(el) {
+        el.textContent = msg;
+        el.style.display = 'block';
     }
 }
 
-// Scroll to top button
-function initScrollToTop() {
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    scrollBtn.className = 'scroll-to-top';
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        z-index: 999;
-        transition: all 0.3s ease;
-        box-shadow: var(--shadow-lg);
-    `;
-    
-    document.body.appendChild(scrollBtn);
-    
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollBtn.style.display = 'flex';
-        } else {
-            scrollBtn.style.display = 'none';
-        }
-    });
-    
-    // Scroll to top when clicked
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+function clearErrors() {
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
 }
 
-// Page transition animations
+function celebrateForm() {
+    // Simple confetti effect using DOM elements
+    const form = document.querySelector('.contact-form-container');
+    if(!form) return;
+
+    for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+            position: absolute; width: 8px; height: 8px; 
+            background: ${['#2563eb', '#f59e0b', '#10b981'][Math.floor(Math.random()*3)]};
+            top: 50%; left: 50%; border-radius: 50%; z-index: 10;
+            transition: all 1s ease-out;
+        `;
+        form.appendChild(confetti);
+
+        // Animate out
+        setTimeout(() => {
+            const x = (Math.random() - 0.5) * 300;
+            const y = (Math.random() - 0.5) * 300;
+            confetti.style.transform = `translate(${x}px, ${y}px)`;
+            confetti.style.opacity = 0;
+        }, 10);
+
+        setTimeout(() => confetti.remove(), 1000);
+    }
+}
+
 function initPageTransitions() {
-    // Add fade-in animation to main content
-    const mainContent = document.querySelector('main, .hero, .page-header');
-    if (mainContent) {
-        mainContent.style.opacity = '0';
-        mainContent.style.animation = 'fadeIn 0.8s ease-out forwards';
-    }
-    
-    // Add CSS for fade-in animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes typeEffect {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.01); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes confettiFall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(500px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Basic fade in on load
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => document.body.style.opacity = '1', 10);
 }
-
-// Initialize animations on window load
-window.addEventListener('load', function() {
-    // Add loaded class to body for CSS animations
-    document.body.classList.add('loaded');
-    
-    // Initialize any additional animations
-    initAdditionalAnimations();
-});
-
-// Additional animations
-function initAdditionalAnimations() {
-    // Add animation to floating elements
-    const floatingElements = document.querySelectorAll('.floating-element');
-    floatingElements.forEach((element, index) => {
-        element.style.animationDelay = `${index * 2}s`;
-    });
-    
-    // Add staggered animation to interest items
-    const interestItems = document.querySelectorAll('.interest-item');
-    interestItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.1}s`;
-    });
-    
-    // Add animation to timeline items
-    const timelineItems = document.querySelectorAll('.timeline-item, .education-stage');
-    timelineItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.2}s`;
-    });
-}
-
-// Export functions for global use (if needed)
-window.PrincSamWebsite = {
-    initNavbar,
-    initContactForm,
-    initScrollAnimations,
-    initSkillLevels,
-    initHoverEffects,
-    initParallax,
-    initStatsAnimation,
-    initFAQ,
-    initCurrentYear,
-    initTypewriter,
-    initScrollToTop,
-    initPageTransitions
-};

@@ -1,0 +1,594 @@
+
+
+
+/* =========================================
+   FUTURE ASPIRATIONS PAGE STYLES
+   ========================================= */
+
+/* Section Spacing */
+.future {
+    padding: 80px 0;
+}
+
+/* 1. Vision Statement (Hero-like Card) */
+.vision-statement {
+    background: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: 3rem;
+    margin-bottom: 5rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid var(--accent);
+}
+
+.vision-icon {
+    font-size: 5rem;
+    color: var(--primary);
+    background: var(--light);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.vision-content h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.vision-text {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.vision-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gray-100);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+/* 2. Timeline (Career Goals) */
+.career-goals {
+    margin-bottom: 6rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.goals-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* The vertical line */
+.timeline-path {
+    position: absolute;
+    width: 4px;
+    background: var(--gray-200);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.goal-milestone {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 50%;
+}
+
+/* Alternating Sides */
+.goal-milestone:nth-of-type(odd) {
+    left: 0;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.goal-milestone:nth-of-type(even) {
+    left: 50%;
+    padding-left: 3rem;
+    text-align: left;
+}
+
+/* The Icon on the Line */
+.milestone-icon {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    z-index: 2;
+    font-size: 1.2rem;
+}
+
+.goal-milestone:nth-of-type(odd) .milestone-icon {
+    right: -25px;
+}
+
+.goal-milestone:nth-of-type(even) .milestone-icon {
+    left: -25px;
+}
+
+/* Content Box */
+.milestone-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.milestone-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.milestone-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.milestone-metrics {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: flex-end; /* Default for right align */
+}
+
+.goal-milestone:nth-of-type(even) .milestone-metrics {
+    justify-content: flex-start;
+}
+
+.metric {
+    text-align: center;
+    background: var(--light);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    min-width: 80px;
+}
+
+.metric-value {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    color: var(--gray-500);
+}
+
+/* 3. Sectors Grid */
+.sectors-section {
+    margin-bottom: 6rem;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.sector-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--secondary);
+}
+
+.sector-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.sector-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.sector-challenges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.challenge {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* 4. Mentorship Mission */
+.mentorship-goal {
+    background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+    color: white;
+    padding: 4rem;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.mentorship-goal .section-subtitle {
+    color: var(--accent);
+}
+
+.mentorship-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.mentorship-stats .stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    color: white;
+}
+
+.mentorship-stats .stat-icon {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.mentorship-stats .stat-number {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.mentorship-stats .stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+.mentorship-channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.channel {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.channel-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.channel-content h4 {
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.channel-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* 5. Influences */
+.influences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.influence-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.influence-image {
+    width: 60px;
+    height: 60px;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.influence-role {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.influence-quote {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin: 1rem 0;
+    position: relative;
+}
+
+.quote-author {
+    text-align: right;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.influence-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.impact-tag {
+    font-size: 0.75rem;
+    background: var(--gray-100);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+}
+
+/* 6. Faith Pillars */
+.faith-mission {
+    margin-bottom: 6rem;
+}
+
+.faith-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.faith-pillar {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--gray-200);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.faith-pillar:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.faith-pillar .pillar-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.pillar-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.action {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    border: 1px solid var(--gray-200);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* 7. Legacy Section */
+.legacy-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.legacy-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder-small {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    box-shadow: var(--shadow-lg);
+    animation: pulse 3s infinite;
+}
+
+.legacy-items {
+    flex: 2;
+}
+
+.legacy-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.legacy-icon {
+    font-size: 1.5rem;
+    color: var(--success);
+    background: rgba(16, 185, 129, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* 8. CTA */
+.future-cta {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: var(--border-radius-lg);
+    margin-top: 4rem;
+}
+
+.future-cta h3 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.future-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.future-cta .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.future-cta .btn-secondary:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vision-statement {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .vision-highlights {
+        justify-content: center;
+    }
+
+    /* Collapse Timeline to Single Column on Mobile */
+    .timeline-path {
+        left: 20px;
+    }
+
+    .goal-milestone {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .goal-milestone:nth-of-type(odd) {
+        left: 0;
+        text-align: left;
+        padding-left: 3rem;
+        padding-right: 0;
+    }
+    
+    .goal-milestone:nth-of-type(even) {
+        left: 0;
+    }
+
+    .milestone-icon {
+        left: -5px !important; /* Force left position on mobile */
+        right: auto !important;
+    }
+
+    .milestone-metrics {
+        justify-content: flex-start;
+    }
+
+    .legacy-content {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .legacy-image {
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
