@@ -1,202 +1,222 @@
-/* =========================================
-   FUTURE ASPIRATIONS PAGE STYLES
-   ========================================= */
+/* Future Page Specific Styles - Responsive Design */
 
-/* Section Spacing */
-.future,
-.vision-statement,
-.career-goals,
-.sectors-section,
-.mentorship-goal,
-.influences-section,
-.faith-mission,
-.legacy-section {
-    padding: 80px 0;
-}
-
-/* 1. Vision Statement (Hero Card) */
+/* Vision Statement */
 .vision-statement {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
-    padding: 4rem;
     display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    position: relative;
-    border-left: 6px solid var(--accent);
+    gap: 2rem;
+    align-items: center;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    padding: 3rem;
+    border-radius: var(--border-radius-xl);
     margin-bottom: 4rem;
-    overflow: hidden;
-}
-
-/* Background decoration */
-.vision-statement::after {
-    content: '';
-    position: absolute;
-    right: -50px;
-    top: -50px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .vision-icon {
-    font-size: 4rem;
-    color: var(--accent);
-    background: #fffbeb;
+    flex-shrink: 0;
     width: 100px;
     height: 100px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.1);
+    color: white;
+    font-size: 2.5rem;
+    animation: pulse 2s infinite;
 }
 
-.vision-content h2 {
-    color: var(--dark);
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+.vision-content {
+    flex: 1;
 }
 
 .vision-text {
     font-size: 1.2rem;
-    color: var(--gray-600);
-    margin-bottom: 2rem;
     line-height: 1.8;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
 }
 
 .vision-highlights {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .highlight {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--light);
-    padding: 0.6rem 1.2rem;
+    background: white;
+    padding: 0.75rem 1.25rem;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--primary);
-    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
 .highlight:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
     transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
-.highlight i { font-size: 1rem; }
+.highlight i {
+    color: var(--accent);
+}
 
-/* 2. Career Goals Timeline */
-.section-header { text-align: center; margin-bottom: 4rem; }
-.section-subtitle { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 0.5rem; }
+/* Career Goals Timeline */
+.career-goals {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-header h2 i {
+    color: var(--primary);
+}
+
+.section-subtitle {
+    color: var(--gray-500);
+    font-size: 1.1rem;
+}
 
 .goals-timeline {
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
     padding: 2rem 0;
 }
 
-/* Center Line */
 .timeline-path {
     position: absolute;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--gray-200), var(--primary), var(--gray-200));
-    top: 0;
-    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
     border-radius: 2px;
 }
 
 .goal-milestone {
     position: relative;
-    margin-bottom: 4rem;
-    width: 50%;
-    clear: both;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    width: 100%;
 }
 
-/* Alternating Sides */
-.goal-milestone:nth-child(odd) { float: left; text-align: right; padding-right: 45px; }
-.goal-milestone:nth-child(even) { float: right; text-align: left; padding-left: 45px; margin-top: 3rem; }
+.goal-milestone:nth-child(odd) {
+    flex-direction: row;
+}
 
-.goals-timeline::after { content: ""; display: table; clear: both; }
+.goal-milestone:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-/* Milestone Icons */
 .milestone-icon {
-    position: absolute;
-    top: 0;
-    width: 50px;
-    height: 50px;
+    position: relative;
+    z-index: 2;
+    width: 80px;
+    height: 80px;
     background: white;
-    border: 3px solid var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary);
-    z-index: 2;
-    font-size: 1.2rem;
-    box-shadow: 0 0 0 5px var(--light);
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid white;
+    transition: var(--transition);
 }
 
-.goal-milestone:nth-child(odd) .milestone-icon { right: -25px; }
-.goal-milestone:nth-child(even) .milestone-icon { left: -25px; }
+.goal-milestone:hover .milestone-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+}
 
-/* Content Box */
+.goal-milestone.highlight .milestone-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, #fbbf24 100%);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
 .milestone-content {
+    flex: 1;
     background: white;
     padding: 2rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
+    margin: 0 2rem;
+    position: relative;
     transition: var(--transition);
-    border-top: 4px solid var(--gray-200);
 }
 
 .goal-milestone:hover .milestone-content {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-top-color: var(--primary);
+    box-shadow: var(--shadow-xl);
 }
 
-.milestone-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.goal-milestone:nth-child(odd) .milestone-content {
+    text-align: left;
+}
+
+.goal-milestone:nth-child(even) .milestone-content {
+    text-align: right;
+}
+
+.milestone-content h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.milestone-content p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
 
 .milestone-metrics {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 1.5rem;
-    justify-content: flex-end;
 }
-
-.goal-milestone:nth-child(even) .milestone-metrics { justify-content: flex-start; }
 
 .metric {
-    text-align: center;
-    background: var(--light);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.metric-value { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
-.metric-label { font-size: 0.7rem; color: var(--gray-500); text-transform: uppercase; }
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
 
-/* Highlighted Milestone (e.g. 2028) */
-.goal-milestone.highlight .milestone-icon { background: var(--accent); color: white; border-color: var(--accent); }
-.goal-milestone.highlight .milestone-content { border-top-color: var(--accent); background: #fffbeb; }
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    text-align: center;
+}
 
-/* 3. Sectors Grid */
+/* Sectors Section */
+.sectors-section {
+    margin-bottom: 4rem;
+}
+
 .sectors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -205,329 +225,993 @@
 
 .sector-card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
+    text-align: center;
     transition: var(--transition);
-    border: 1px solid var(--gray-100);
     position: relative;
     overflow: hidden;
 }
 
-.sector-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); border-color: var(--secondary); }
+.sector-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.sector-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+}
 
 .sector-icon {
-    font-size: 2.5rem;
-    color: var(--secondary);
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    background: rgba(124, 58, 237, 0.1);
-    width: 70px;
-    height: 70px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+}
+
+.sector-icon i {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.sector-card h3 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.sector-card p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 
 .sector-challenges {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
     margin-top: 1.5rem;
 }
 
 .challenge {
-    font-size: 0.8rem;
-    background: var(--light);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    color: var(--gray-600);
-    border: 1px solid var(--gray-200);
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
 }
 
-/* 4. Mentorship Mission (Dark Section) */
-.mentorship-goal {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+.sector-card:hover .challenge {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-2xl);
-    overflow: hidden;
-    position: relative;
 }
 
-/* Background Pattern */
-.mentorship-goal::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.1;
-}
-
-.mentorship-goal .section-header h2, 
-.mentorship-goal .section-subtitle { color: white; }
-.mentorship-goal .section-subtitle { color: var(--accent); }
-
-.mentorship-content { position: relative; z-index: 2; }
-
-.mentorship-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+/* Mentorship Mission */
+.mentorship-goal {
     margin-bottom: 4rem;
 }
 
+.mentorship-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.mentorship-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
 .stat-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
     text-align: center;
     transition: var(--transition);
 }
 
-.stat-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
 
-.stat-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
-.stat-number { font-size: 3rem; font-weight: 800; display: block; margin-bottom: 0.5rem; }
-.stat-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.stat-icon i {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.mentorship-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin-bottom: 2rem;
+}
 
 .mentorship-channels {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
 .channel {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    padding: 1rem;
-    background: rgba(255,255,255,0.03);
-    border-radius: 8px;
+    transition: var(--transition);
 }
 
-.channel-icon { color: var(--primary); font-size: 1.5rem; margin-top: 5px; }
-.channel-content h4 { color: white; margin-bottom: 0.5rem; }
-.channel-content p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0; }
+.channel:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
 
-/* 5. Influences */
+.channel-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.channel-content h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.channel-content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Influences Section */
+.influences-section {
+    margin-bottom: 4rem;
+}
+
 .influences-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
 .influence-card {
     background: white;
-    padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
+    overflow: hidden;
     transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
-.influence-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.influence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
 
 .influence-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: var(--light);
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    color: white;
+    font-size: 4rem;
+}
+
+.influence-details {
+    padding: 2.5rem;
+}
+
+.influence-details h3 {
     color: var(--primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .influence-role {
-    color: var(--secondary);
+    color: var(--accent);
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.influence-details p {
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
 .influence-quote {
-    background: #f8fafc;
+    background: var(--gray-100);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-style: italic;
-    color: var(--gray-600);
+    color: var(--gray-700);
     margin: 1.5rem 0;
     position: relative;
-    border-left: 3px solid var(--accent);
+    border-left: 4px solid var(--accent);
 }
 
-.quote-author { font-weight: 700; margin-top: 0.5rem; font-style: normal; font-size: 0.85rem; color: var(--dark); text-align: right; }
+.influence-quote i.fa-quote-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+    color: var(--accent);
+    opacity: 0.5;
+}
 
-.influence-impact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
-.impact-tag { font-size: 0.75rem; background: var(--gray-100); padding: 0.3rem 0.8rem; border-radius: 50px; color: var(--gray-600); }
+.influence-quote i.fa-quote-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: var(--accent);
+    opacity: 0.5;
+}
 
-/* 6. Faith Pillars */
+.quote-author {
+    text-align: right;
+    margin-top: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.influence-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.impact-tag {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Faith Mission */
+.faith-mission {
+    margin-bottom: 4rem;
+}
+
 .faith-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .faith-pillar {
     background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    border: 1px solid var(--gray-200);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
     transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .faith-pillar:hover {
-    border-color: var(--primary);
-    box-shadow: var(--shadow-lg);
     transform: translateY(-5px);
-}
-
-.pillar-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-}
-
-.pillar-content h4 { margin-bottom: 1rem; color: var(--dark); }
-
-.pillar-actions {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.action {
-    font-size: 0.75rem;
-    border: 1px solid var(--gray-200);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    color: var(--gray-500);
-}
-
-/* 7. Legacy Section */
-.legacy-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
-    background: white;
-    padding: 3rem;
-    border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-xl);
 }
 
-.image-placeholder-small {
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 5rem;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+.faith-pillar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
-.legacy-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
-.legacy-item:last-child { margin-bottom: 0; }
-
-.legacy-icon {
-    width: 50px;
-    height: 50px;
-    background: #ecfdf5;
-    color: var(--success);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
+.faith-pillar:hover:before {
+    transform: scaleX(1);
 }
 
-/* 8. CTA */
-.future-cta {
-    margin-top: 4rem;
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.pillar-icon i {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    border-radius: var(--border-radius-lg);
-    padding: 5rem 2rem;
-    text-align: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.faith-pillar h4 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.faith-pillar p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.action {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.faith-pillar:hover .action {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
 }
 
-.cta-content { max-width: 700px; margin: 0 auto; }
-.future-cta h3 { font-size: 2.5rem; margin-bottom: 1.5rem; color: white; }
-.future-cta p { font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+/* Legacy Section */
+.legacy-section {
+    margin-bottom: 4rem;
+}
 
-.cta-buttons {
-    margin-top: 2.5rem;
+.legacy-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.legacy-image {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder-small {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    box-shadow: var(--shadow-xl);
+    animation: float 6s ease-in-out infinite;
+}
+
+.legacy-items {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-.future-cta .btn-secondary {
-    border-color: white;
-    color: white;
-}
-
-.future-cta .btn-secondary:hover {
+.legacy-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
     background: white;
-    color: var(--primary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
-/* =========================================
-   RESPONSIVE (Mobile Timeline Fix)
-   ========================================= */
-@media (max-width: 900px) {
+.legacy-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.legacy-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.legacy-details h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.legacy-details p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Call to Action */
+.future-cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 4rem;
+    border-radius: var(--border-radius-xl);
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.cta-content h3 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Responsive Design for Future Page */
+@media (max-width: 1200px) {
+    .vision-statement {
+        padding: 2.5rem;
+    }
+    
+    .vision-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+    
+    .mentorship-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .legacy-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .image-placeholder-small {
+        width: 180px;
+        height: 180px;
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
     .vision-statement {
         flex-direction: column;
-        padding: 2rem;
         text-align: center;
+        gap: 2rem;
+        padding: 2rem;
     }
-
-    /* Timeline Fixes */
-    .timeline-path { left: 30px; transform: none; }
+    
+    .vision-highlights {
+        justify-content: center;
+    }
+    
+    .timeline-path {
+        left: 80px;
+    }
     
     .goal-milestone {
-        width: 100%;
-        float: none;
-        text-align: left;
-        padding-left: 80px;
-        padding-right: 0;
+        flex-direction: row !important;
+        margin-left: 80px;
     }
-
-    .goal-milestone:nth-child(odd),
-    .goal-milestone:nth-child(even) {
-        float: none;
-        text-align: left;
-        padding-left: 80px;
-        padding-right: 0;
-        margin-top: 3rem;
-    }
-
-    .milestone-icon {
-        left: 0 !important;
-        right: auto !important;
-    }
-
-    .milestone-metrics { justify-content: flex-start !important; }
-
-    /* Other Grids */
-    .legacy-content { grid-template-columns: 1fr; text-align: center; }
-    .legacy-item { flex-direction: column; align-items: center; }
     
-    .cta-buttons { flex-direction: column; }
+    .goal-milestone:nth-child(even) .milestone-content {
+        text-align: left;
+    }
+    
+    .milestone-content {
+        margin-left: 2rem;
+        margin-right: 0;
+    }
+    
+    .milestone-icon {
+        position: absolute;
+        left: -100px;
+    }
+    
+    .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mentorship-channels {
+        grid-template-columns: 1fr;
+    }
+    
+    .influences-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faith-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .vision-text {
+        font-size: 1.1rem;
+    }
+    
+    .highlight {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-path {
+        left: 60px;
+    }
+    
+    .goal-milestone {
+        margin-left: 60px;
+    }
+    
+    .milestone-icon {
+        left: -80px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .milestone-content {
+        padding: 1.5rem;
+    }
+    
+    .milestone-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .milestone-metrics {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .metric-value {
+        font-size: 1.8rem;
+    }
+    
+    .sectors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sector-card {
+        padding: 2rem;
+    }
+    
+    .mentorship-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .mentorship-details p {
+        font-size: 1rem;
+    }
+    
+    .influence-details {
+        padding: 2rem;
+    }
+    
+    .influence-image {
+        height: 150px;
+        font-size: 3rem;
+    }
+    
+    .faith-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faith-pillar {
+        padding: 2rem;
+    }
+    
+    .pillar-icon {
+        font-size: 2.5rem;
+    }
+    
+    .legacy-item {
+        padding: 1.25rem;
+    }
+    
+    .legacy-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .future-cta {
+        padding: 3rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .vision-statement {
+        padding: 1.5rem;
+    }
+    
+    .vision-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    .vision-text {
+        font-size: 1rem;
+    }
+    
+    .vision-highlights {
+        gap: 0.5rem;
+    }
+    
+    .highlight {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .timeline-path {
+        left: 40px;
+    }
+    
+    .goal-milestone {
+        margin-left: 40px;
+    }
+    
+    .milestone-icon {
+        left: -60px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .milestone-content {
+        padding: 1.25rem;
+        margin-left: 1.5rem;
+    }
+    
+    .milestone-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .sector-card {
+        padding: 1.5rem;
+    }
+    
+    .sector-icon {
+        font-size: 2.5rem;
+    }
+    
+    .channel {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+    }
+    
+    .channel-icon {
+        margin: 0 auto;
+    }
+    
+    .influence-details {
+        padding: 1.5rem;
+    }
+    
+    .influence-quote {
+        padding: 1.25rem;
+        font-size: 0.95rem;
+    }
+    
+    .faith-pillar {
+        padding: 1.5rem;
+    }
+    
+    .pillar-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .legacy-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .legacy-icon {
+        margin: 0 auto;
+    }
+    
+    .image-placeholder-small {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
+    
+    .future-cta {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons .btn {
+        max-width: 100%;
+    }
+}
+
+/* Animation for timeline path */
+@keyframes drawPath {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+.timeline-path {
+    animation: drawPath 2s ease-out forwards;
+}
+
+/* Animation for milestone icons */
+.goal-milestone {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.goal-milestone:nth-child(1) { animation-delay: 0.2s; }
+.goal-milestone:nth-child(2) { animation-delay: 0.4s; }
+.goal-milestone:nth-child(3) { animation-delay: 0.6s; }
+.goal-milestone:nth-child(4) { animation-delay: 0.8s; }
+.goal-milestone:nth-child(5) { animation-delay: 1s; }
+
+/* Hover effects for cards */
+.sector-card,
+.stat-card,
+.influence-card,
+.faith-pillar,
+.legacy-item {
+    transition: all 0.3s ease;
+}
+
+.sector-card:hover,
+.stat-card:hover,
+.influence-card:hover,
+.faith-pillar:hover,
+.legacy-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .vision-statement {
+        margin-bottom: 3rem;
+    }
+    
+    .career-goals,
+    .sectors-section,
+    .mentorship-goal,
+    .influences-section,
+    .faith-mission,
+    .legacy-section {
+        margin-bottom: 3rem;
+    }
+    
+    .highlight {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    .metric-value {
+        font-size: 1.6rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+    
+    .sector-challenges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .challenge {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .influence-impact {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .impact-tag {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Tablet landscape adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .vision-statement {
+        padding: 2rem;
+    }
+    
+    .vision-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+    }
+    
+    .goal-milestone {
+        margin-left: 100px;
+    }
+    
+    .milestone-icon {
+        left: -120px;
+    }
+    
+    .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .influences-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .influence-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .hamburger,
+    .social-links,
+    .future-cta,
+    .btn {
+        display: none !important;
+    }
+    
+    .vision-statement,
+    .sector-card,
+    .influence-card,
+    .faith-pillar,
+    .legacy-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+    
+    h1, h2, h3, h4 {
+        color: #000;
+    }
+    
+    .page-header {
+        padding: 60px 0 40px;
+    }
 }

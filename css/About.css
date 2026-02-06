@@ -1,33 +1,20 @@
-/* About Cards (Childhood/Education) */
-.about { padding: 100px 0; }
-.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-.about-card { background: white; padding: 2.5rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow); text-align: center; transition: var(--transition); position: relative; overflow: hidden; animation: fadeInUp 0.8s ease-out both; }
-.about-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
-.about-card:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
-.about-card:hover:before { transform: scaleX(1); }
-.about-card .icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: inline-block; }
-.about-card .icon i { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; animation: bounce 2s infinite; }
+/* =========================================
+   ABOUT & STATS CARD STYLES (Fixed)
+   ========================================= */
 
-/* Stats Section */
-.stats { padding: 80px 0; background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%); }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
-.stat-card { background: white; padding: 2rem; border-radius: var(--border-radius-lg); text-align: center; transition: var(--transition); box-shadow: var(--shadow); }
-.stat-card:hover { transform: translateY(-5px); }
-.stat-number { font-size: 3rem; font-weight: 700; color: var(--primary); }
+/* Section Spacing */
+.about, .stats, .bible-verse {
+    padding: 80px 0;
+}
 
-/* Bible Verse */
-.bible-verse { padding: 80px 0; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); position: relative; }
-.bible-verse blockquote { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.8rem; font-style: italic; color: var(--dark); background: white; padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-xl); position: relative; }
-.bible-verse .fa-quote-left, .bible-verse .fa-quote-right { position: absolute; font-size: 3rem; opacity: 0.2; color: var(--accent); }
-.bible-verse .fa-quote-left { top: 1rem; left: 1rem; }
-.bible-verse .fa-quote-right { bottom: 1rem; right: 1rem; }
-
-/* Ensure this is in css/About.css OR add to css/Home.css */
+/* 1. About Cards Grid */
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Fixed: Changed minmax from 300px to 280px to fit mobile screens better */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
+    align-items: stretch; /* Ensures all cards in a row have equal height */
 }
 
 .about-card {
@@ -37,6 +24,29 @@
     box-shadow: var(--shadow);
     text-align: center;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden; /* Keeps the hover effect inside */
+    
+    /* Flexbox ensures content is centered and structured vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%; 
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle border for definition */
+}
+
+/* Hover Animation - Top Line */
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
 .about-card:hover {
@@ -44,8 +54,144 @@
     box-shadow: var(--shadow-xl);
 }
 
+.about-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon Styling */
 .about-card .icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.about-card .icon i {
+    /* Gradient Text Effect */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Fallback for browsers that don't support text clip */
+    /* color: var(--primary); */ 
+}
+
+.about-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.about-card p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0; /* Prevents extra space at the bottom */
+}
+
+/* 2. Stats Section */
+.stats {
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+}
+
+.stats-grid {
+    display: grid;
+    /* Using 200px min ensures stats don't get too squashed */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    border: 1px solid white;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
     color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 3. Bible Verse Section */
+.bible-verse {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); /* Warm Amber */
+    position: relative;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.bible-verse blockquote {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--dark);
+    background: white;
+    padding: 3rem 4rem; /* More padding for better readability */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+}
+
+.bible-verse .fa-quote-left, 
+.bible-verse .fa-quote-right {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.15;
+    color: var(--accent);
+}
+
+.bible-verse .fa-quote-left { top: 1.5rem; left: 1.5rem; }
+.bible-verse .fa-quote-right { bottom: 1.5rem; right: 1.5rem; }
+
+.bible-verse footer {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: normal;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-grid {
+        gap: 1.5rem;
+    }
+    
+    .about-card {
+        padding: 2rem;
+    }
+
+    .bible-verse blockquote {
+        padding: 2rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }
