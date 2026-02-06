@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princ Sam | Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Princ<span>Sam</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="childhood.html">Childhood</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="future.html">Future</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Let's connect and create something amazing together</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-header">
+                        <h2>Contact Information</h2>
+                        <p>I'm always open to discussing new opportunities, mentorship, collaborations, or just having a good conversation about technology, faith, or music.</p>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:Sammybett369@gmail.com" class="contact-link">
+                                    Sammybett369@gmail.com
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/samprinc" target="_blank" class="contact-link">
+                                    github.com/samprinc
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="contact-link">
+                                    linkedin.com/in/samprinc
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Instagram</h4>
+                                <a href="https://www.instagram.com/sam_princ1/" target="_blank" class="contact-link">
+                                    @sam_princ1
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-availability">
+                        <div class="availability-header">
+                            <i class="fas fa-clock"></i>
+                            <h3>Response Time</h3>
+                        </div>
+                        <p>I typically respond to emails within 24-48 hours. For urgent matters, LinkedIn messaging might get a quicker response.</p>
+                        <div class="availability-status">
+                            <div class="status-indicator available"></div>
+                            <span>Currently Available for Opportunities</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-interests">
+                        <h3>Interested in:</h3>
+                        <div class="interest-tags">
+                            <span class="tag">Internship Opportunities</span>
+                            <span class="tag">Collaborative Projects</span>
+                            <span class="tag">Mentorship</span>
+                            <span class="tag">Tech Talks</span>
+                            <span class="tag">Faith Discussions</span>
+                            <span class="tag">Music Collaboration</span>
+                            <span class="tag">Startup Ideas</span>
+                            <span class="tag">Community Projects</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container animate-on-scroll">
+                    <div class="form-header">
+                        <h2>Send Me a Message</h2>
+                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name *
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject
+                            </label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment"></i>
+                                Message *
+                            </label>
+                            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                            <div class="char-count">
+                                <span id="charCount">0</span> / 500 characters
+                            </div>
+                            <div class="error-message" id="messageError"></div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <div class="checkbox">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">
+                                    <span class="checkbox-box"></span>
+                                    Subscribe to my occasional newsletter on tech, faith, and personal growth
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                            <div class="btn-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                        
+                        <div id="formSuccess" class="success-message">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="success-content">
+                                <h4>Message Sent Successfully!</h4>
+                                <p>Thank you! Your message has been sent. I'll review it and get back to you within 24-48 hours.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="contact-faq animate-on-scroll">
+                <div class="faq-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are you available for freelance work?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, I'm focused on my studies and personal projects, but I'm open to discussing small projects that align with my skills and values. The best approach is to contact me with details about your project.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer mentorship?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! I'm passionate about mentoring students in software engineering, career guidance, and personal development. I offer both formal mentorship programs and informal guidance. Feel free to reach out with your specific needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you speak at our event?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I'd be honored to speak about software engineering, faith in tech, leadership development, or my personal journey. Contact me with event details, topic preferences, and timeline for consideration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What's the best way to collaborate?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I'm particularly interested in projects that solve Kenyan challenges in education, finance, or community development. The best way to start is by sharing your idea or project details via email, and we can schedule a call to discuss possibilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I stay updated on your work?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Follow me on GitHub for my latest projects, LinkedIn for professional updates, and Instagram for personal insights. You can also subscribe to my newsletter via the contact form for occasional updates on tech, faith, and personal growth.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What's your response time?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>I aim to respond to all messages within 24-48 hours. For urgent matters, please indicate "URGENT" in your subject line. LinkedIn messages typically receive faster responses than email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Call to Action -->
+            <div class="contact-cta animate-on-scroll">
+                <div class="cta-content">
+                    <h3>Let's Build Something Together</h3>
+                    <p>Whether you have a project idea, need technical guidance, want to collaborate, or just want to connect, I'm here to listen and explore possibilities. Technology is most powerful when it connects people and solves real problems.</p>
+                    <div class="cta-stats">
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Response Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24-48h</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Open</div>
+                            <div class="stat-label">For Opportunities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Princ Sam</h3>
+                    <p>BSc Software Engineering Student<br>Kirinyaga University</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="childhood.html">Childhood</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="future.html">Future Aspirations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/samprinc"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/samprinc"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/sam_princ1/"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:Sammybett369@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Princ Sam. All rights reserved. | Designed with passion and purpose</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
