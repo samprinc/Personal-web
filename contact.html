@@ -1,340 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princ Sam | Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <title>Sammy Kiprop | Contact & Consulting</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#1e293b', // slate-800
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Princ<span>Sam</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="childhood.html">Childhood</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="future.html">Future</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+<body class="bg-slate-900 text-slate-200 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-bold tracking-tight text-white">
+                    Sammy<span class="text-primary">Kiprop</span>
+                </a>
+                
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                    <li><a href="skills.html" class="text-slate-300 hover:text-white transition-colors">Expertise</a></li>
+                    <li><a href="projects.html" class="text-slate-300 hover:text-white transition-colors">Solutions</a></li>
+                    <li><a href="contact.html" class="text-primary font-medium">Contact</a></li>
+                </ul>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Get In Touch</h1>
-            <p>Let's connect and create something amazing together</p>
+    <section class="pt-32 pb-16 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Let's Build Something Great</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">Ready to scale your digital infrastructure or discuss a custom enterprise solution? Let's connect.</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="contact">
-        <div class="container">
-            <div class="contact-container">
-                <!-- Contact Information -->
-                <div class="contact-info animate-on-scroll">
-                    <div class="info-header">
-                        <h2>Contact Information</h2>
-                        <p>I'm always open to discussing new opportunities, mentorship, collaborations, or just having a good conversation about technology, faith, or music.</p>
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-2">Direct Contact</h2>
+                        <p class="text-slate-400">I am currently available for architectural consulting, B2B project development, and technical leadership roles.</p>
                     </div>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                    <div class="space-y-6">
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex items-start gap-4 hover:border-primary/50 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-xl text-primary"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <a href="mailto:Sammybett369@gmail.com" class="contact-link">
+                            <div>
+                                <h4 class="text-sm font-medium text-slate-400 mb-1">Email Address</h4>
+                                <a href="mailto:Sammybett369@gmail.com" class="text-lg font-semibold text-white hover:text-primary transition-colors">
                                     Sammybett369@gmail.com
-                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex items-start gap-4 hover:border-primary/50 transition-colors">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-linkedin text-xl text-primary"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/samprinc" target="_blank" class="contact-link">
-                                    github.com/samprinc
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="contact-link">
+                            <div>
+                                <h4 class="text-sm font-medium text-slate-400 mb-1">LinkedIn Network</h4>
+                                <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="text-lg font-semibold text-white hover:text-primary transition-colors">
                                     linkedin.com/in/samprinc
-                                    <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-instagram"></i>
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 flex items-start gap-4 hover:border-primary/50 transition-colors">
+                            <div class="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-github text-xl text-slate-300"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Instagram</h4>
-                                <a href="https://www.instagram.com/sam_princ1/" target="_blank" class="contact-link">
-                                    @sam_princ1
-                                    <i class="fas fa-external-link-alt"></i>
+                            <div>
+                                <h4 class="text-sm font-medium text-slate-400 mb-1">Code & Architecture</h4>
+                                <a href="https://github.com/samprinc" target="_blank" class="text-lg font-semibold text-white hover:text-primary transition-colors">
+                                    github.com/samprinc
                                 </a>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-availability">
-                        <div class="availability-header">
-                            <i class="fas fa-clock"></i>
-                            <h3>Response Time</h3>
+
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-800/50 p-6 rounded-xl border border-slate-700 mt-8">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </div>
+                            <h3 class="text-white font-semibold">Current Status</h3>
                         </div>
-                        <p>I typically respond to emails within 24-48 hours. For urgent matters, LinkedIn messaging might get a quicker response.</p>
-                        <div class="availability-status">
-                            <div class="status-indicator available"></div>
-                            <span>Currently Available for Opportunities</span>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-interests">
-                        <h3>Interested in:</h3>
-                        <div class="interest-tags">
-                            <span class="tag">Internship Opportunities</span>
-                            <span class="tag">Collaborative Projects</span>
-                            <span class="tag">Mentorship</span>
-                            <span class="tag">Tech Talks</span>
-                            <span class="tag">Faith Discussions</span>
-                            <span class="tag">Music Collaboration</span>
-                            <span class="tag">Startup Ideas</span>
-                            <span class="tag">Community Projects</span>
-                        </div>
+                        <p class="text-slate-400 text-sm">Accepting new enterprise clients and consulting roles. Typical response time is under 24 hours.</p>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div class="contact-form-container animate-on-scroll">
-                    <div class="form-header">
-                        <h2>Send Me a Message</h2>
-                        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
-                    </div>
-                    
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">
-                                <i class="fas fa-user"></i>
-                                Full Name *
-                            </label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                            <div class="error-message" id="nameError"></div>
-                        </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-800/50 p-8 md:p-10 rounded-2xl border border-slate-700 shadow-xl">
+                        <h2 class="text-2xl font-bold text-white mb-6">Send a Project Inquiry</h2>
                         
-                        <div class="form-group">
-                            <label for="email">
-                                <i class="fas fa-envelope"></i>
-                                Email Address *
-                            </label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                            <div class="error-message" id="emailError"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">
-                                <i class="fas fa-tag"></i>
-                                Subject
-                            </label>
-                            <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">
-                                <i class="fas fa-comment"></i>
-                                Message *
-                            </label>
-                            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-                            <div class="char-count">
-                                <span id="charCount">0</span> / 500 characters
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-medium text-slate-300">Full Name *</label>
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                        placeholder="John Doe">
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-slate-300">Email Address *</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                        placeholder="john@company.com">
+                                </div>
                             </div>
-                            <div class="error-message" id="messageError"></div>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <div class="checkbox">
-                                <input type="checkbox" id="newsletter" name="newsletter">
-                                <label for="newsletter">
-                                    <span class="checkbox-box"></span>
-                                    Subscribe to my occasional newsletter on tech, faith, and personal growth
-                                </label>
+                            
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium text-slate-300">Project Type / Subject</label>
+                                <select id="subject" name="subject"
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none">
+                                    <option value="custom-software">Custom Software Architecture</option>
+                                    <option value="system-refactoring">System Refactoring & Optimization</option>
+                                    <option value="api-development">Backend / API Development</option>
+                                    <option value="technical-consulting">Technical Consulting</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
                             </div>
-                        </div>
-                        
-                        <button type="submit" class="btn submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                            <div class="btn-loading">
-                                <div class="spinner"></div>
+                            
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-medium text-slate-300">Project Details *</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                                    placeholder="Briefly describe your project requirements, timeline, and current infrastructure..."></textarea>
                             </div>
-                        </button>
-                        
-                        <div id="formSuccess" class="success-message">
-                            <div class="success-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="success-content">
-                                <h4>Message Sent Successfully!</h4>
-                                <p>Thank you! Your message has been sent. I'll review it and get back to you within 24-48 hours.</p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- FAQ Section -->
-            <div class="contact-faq animate-on-scroll">
-                <div class="faq-header">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Quick answers to common questions</p>
-                </div>
-                
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Are you available for freelance work?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Currently, I'm focused on my studies and personal projects, but I'm open to discussing small projects that align with my skills and values. The best approach is to contact me with details about your project.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Do you offer mentorship?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! I'm passionate about mentoring students in software engineering, career guidance, and personal development. I offer both formal mentorship programs and informal guidance. Feel free to reach out with your specific needs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Can you speak at our event?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>I'd be honored to speak about software engineering, faith in tech, leadership development, or my personal journey. Contact me with event details, topic preferences, and timeline for consideration.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>What's the best way to collaborate?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>I'm particularly interested in projects that solve Kenyan challenges in education, finance, or community development. The best way to start is by sharing your idea or project details via email, and we can schedule a call to discuss possibilities.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How can I stay updated on your work?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Follow me on GitHub for my latest projects, LinkedIn for professional updates, and Instagram for personal insights. You can also subscribe to my newsletter via the contact form for occasional updates on tech, faith, and personal growth.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>What's your response time?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>I aim to respond to all messages within 24-48 hours. For urgent matters, please indicate "URGENT" in your subject line. LinkedIn messages typically receive faster responses than email.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contact Call to Action -->
-            <div class="contact-cta animate-on-scroll">
-                <div class="cta-content">
-                    <h3>Let's Build Something Together</h3>
-                    <p>Whether you have a project idea, need technical guidance, want to collaborate, or just want to connect, I'm here to listen and explore possibilities. Technology is most powerful when it connects people and solves real problems.</p>
-                    <div class="cta-stats">
-                        <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Response Rate</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">24-48h</div>
-                            <div class="stat-label">Response Time</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Open</div>
-                            <div class="stat-label">For Opportunities</div>
-                        </div>
+                            
+                            <button type="submit" 
+                                class="w-full bg-primary hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/30 flex justify-center items-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Initialize Request
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Princ Sam</h3>
-                    <p>BSc Software Engineering Student<br>Kirinyaga University</p>
+    
+    <section class="py-20 bg-slate-800/30 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Client FAQ</h2>
+                <div class="h-1 w-16 bg-primary mx-auto rounded"></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-2">Are you accepting new enterprise clients?</h3>
+                    <p class="text-slate-400 leading-relaxed">Yes. I am currently taking on select B2B architectural projects and full-stack development contracts. Contact me above to discuss your specific timeline and requirements.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="childhood.html">Childhood</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="skills.html">Skills</a></li>
-                        <li><a href="future.html">Future Aspirations</a></li>
+                
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-2">What is your typical onboarding process?</h3>
+                    <p class="text-slate-400 leading-relaxed">We begin with a discovery call to audit your current digital infrastructure and understand your business goals. From there, I draft a technical proposal outlining the architecture, tech stack (Django, .NET, or Node.js), and development sprints required to deploy the solution.</p>
+                </div>
+                
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-2">Do you provide technical consulting for existing teams?</h3>
+                    <p class="text-slate-400 leading-relaxed">Yes. In addition to building software from scratch, I consult on system refactoring, database optimization, and team training to ensure your in-house developers are following modern, scalable best practices.</p>
+                </div>
+
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-2">Do you still offer technical mentorship?</h3>
+                    <p class="text-slate-400 leading-relaxed">Absolutely. Through my leadership at PataSpace Academy and targeted one-on-one sessions, I remain deeply committed to mentoring the next generation of Kenyan technologists. Reach out if you are interested in upcoming cohorts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sammy Kiprop</h3>
+                    <p class="text-slate-400">Full-Stack Software Engineer<br>Enterprise Solutions Architect</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-slate-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="skills.html" class="text-slate-400 hover:text-primary transition-colors">Expertise</a></li>
+                        <li><a href="projects.html" class="text-slate-400 hover:text-primary transition-colors">Solutions</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/samprinc"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/samprinc"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/sam_princ1/"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:Sammybett369@gmail.com"><i class="fas fa-envelope"></i></a>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sam_princ1/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:Sammybett369@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Princ Sam. All rights reserved. | Designed with passion and purpose</p>
+            <div class="pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; <span id="currentYear"></span> Sammy Kiprop. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Engineered for Excellence</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Simple form submission mock handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.classList.add('opacity-75', 'cursor-not-allowed');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Request Sent';
+                btn.classList.remove('bg-primary', 'hover:bg-blue-600');
+                btn.classList.add('bg-green-500', 'hover:bg-green-600');
+                this.reset();
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.add('bg-primary', 'hover:bg-blue-600');
+                    btn.classList.remove('bg-green-500', 'hover:bg-green-600', 'opacity-75', 'cursor-not-allowed');
+                }, 3000);
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
