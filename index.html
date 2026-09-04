@@ -1,165 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princ Sam | Full-Stack Software Engineer</title>
+    <title>Sammy Kiprop | Full-Stack Software Engineer</title>
     
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#1e293b', // slate-800
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-200 font-sans antialiased selection:bg-primary selection:text-white">
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Princ<span>Sam</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills.html">Expertise</a></li>
-                <li><a href="projects.html">Solutions</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-bold tracking-tight text-white">
+                    Sammy<span class="text-primary">Kiprop</span>
+                </a>
+                
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-primary font-medium">Home</a></li>
+                    <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                    <li><a href="skills.html" class="text-slate-300 hover:text-white transition-colors">Expertise</a></li>
+                    <li><a href="projects.html" class="text-slate-300 hover:text-white transition-colors">Solutions</a></li>
+                    <li><a href="contact.html" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in">Sammy <span>Kiprop</span></h1>
-                <h2 class="fade-in">Full-Stack Software Engineer</h2>
-                <h3 class="fade-in">Enterprise Solutions Architect</h3>
-                <p class="hero-quote fade-in">"Engineering scalable digital infrastructure that drives business growth and automation."</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> View Services
-                    </a>
-                    <a href="contact.html" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Discuss a Project
-                    </a>
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Sammy <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Kiprop</span>
+                    </h1>
+                    <div class="space-y-2">
+                        <h2 class="text-2xl md:text-3xl font-semibold text-slate-300">Full-Stack Software Engineer</h2>
+                        <h3 class="text-xl md:text-2xl text-slate-400">Enterprise Solutions Architect</h3>
+                    </div>
+                    <p class="text-lg text-slate-400 border-l-4 border-primary pl-4 italic">
+                        "Engineering scalable digital infrastructure that drives business growth and automation."
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#about" class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/30">
+                            <i class="fas fa-rocket"></i> View Services
+                        </a>
+                        <a href="contact.html" class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg border border-slate-700 transition-all duration-200">
+                            <i class="fas fa-envelope"></i> Discuss a Project
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-container">
-                    <img src="pre.jpg" alt="Sammy Kiprop" class="profile-img">
-                    <div class="floating-elements">
-                        <div class="floating-element"><i class="fas fa-code"></i></div>
-                        <div class="floating-element"><i class="fab fa-react"></i></div>
-                        <div class="floating-element"><i class="fas fa-database"></i></div>
+
+                <div class="relative hidden lg:block">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+                    <img src="pre.jpg" alt="Sammy Kiprop" class="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-slate-700 object-cover aspect-square">
+                    
+                    <div class="absolute top-10 -left-6 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 3s;">
+                        <i class="fab fa-react text-blue-400 text-3xl"></i>
+                    </div>
+                    <div class="absolute bottom-20 -right-6 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl animate-bounce" style="animation-duration: 4s;">
+                        <i class="fas fa-database text-green-400 text-3xl"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Professional Overview</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="icon">
-                        <i class="fas fa-laptop-code"></i>
+    <section id="about" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Professional Overview</h2>
+                <div class="h-1 w-20 bg-primary mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code text-2xl text-primary"></i>
                     </div>
-                    <h3>Full-Stack Development</h3>
-                    <p>Specializing in building robust, end-to-end applications. From responsive React frontends to secure, high-performance Django and .NET backend architectures.</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Full-Stack Development</h3>
+                    <p class="text-slate-400 leading-relaxed">Specializing in building robust, end-to-end applications. From responsive React frontends to secure, high-performance Django and .NET backend architectures.</p>
                 </div>
-                <div class="about-card">
-                    <div class="icon">
-                        <i class="fas fa-server"></i>
+                
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server text-2xl text-primary"></i>
                     </div>
-                    <h3>Systems Architecture</h3>
-                    <p>Designing scalable database structures and API integrations that allow businesses to automate operations, manage data securely, and scale effortlessly.</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Systems Architecture</h3>
+                    <p class="text-slate-400 leading-relaxed">Designing scalable database structures and API integrations that allow businesses to automate operations, manage data securely, and scale effortlessly.</p>
                 </div>
-                <div class="about-card">
-                    <div class="icon">
-                        <i class="fas fa-chart-line"></i>
+
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-2xl text-primary"></i>
                     </div>
-                    <h3>Business Solutions</h3>
-                    <p>Translating complex business requirements into seamless digital products. Focused on delivering high-ROI software that solves actual operational bottlenecks.</p>
+                    <h3 class="text-xl font-semibold text-white mb-3">Business Solutions</h3>
+                    <p class="text-slate-400 leading-relaxed">Translating complex business requirements into seamless digital products. Focused on delivering high-ROI software that solves actual operational bottlenecks.</p>
                 </div>
             </div>
 
-            <div class="interests">
-                <h3>Core Competencies</h3>
-                <div class="interests-list">
-                    <div class="interest-item">
-                        <i class="fas fa-code"></i>
-                        <span>Custom Web Applications</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-database"></i>
-                        <span>Database Design</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-network-wired"></i>
-                        <span>API Development</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Responsive UI/UX</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-cogs"></i>
-                        <span>System Integration</span>
-                    </div>
-                    <div class="interest-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Secure Architecture</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-white mb-6">Core Competencies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-code text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">Custom Web Apps</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-database text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">Database Design</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-network-wired text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">API Development</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-mobile-alt text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">Responsive UI/UX</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-cogs text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">System Integration</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-800 p-4 rounded-lg border border-slate-700">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <span class="text-slate-300 text-sm font-medium">Secure Architecture</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="goals">
-                <h3>Value Proposition For Clients</h3>
-                <ul>
-                    <li>Develop scalable B2B platforms and enterprise management systems.</li>
-                    <li>Optimize existing codebases for maximum speed, security, and reliability.</li>
-                    <li>Architect custom Point-of-Sale and inventory solutions tailored to your workflow.</li>
-                    <li>Provide technical consulting to align digital infrastructure with business goals.</li>
-                    <li>Ensure seamless deployment and ongoing system maintenance.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Sammy Kiprop</h3>
-                    <p>Full-Stack Software Engineer<br>Enterprise Solutions Architect</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="skills.html">Expertise</a></li>
-                        <li><a href="projects.html">Solutions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div class="bg-gradient-to-br from-slate-800 to-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-2xl font-semibold text-white mb-6">Value Proposition For Clients</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1"></i>
+                            <span class="text-slate-300">Develop scalable B2B platforms and enterprise management systems.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1"></i>
+                            <span class="text-slate-300">Optimize existing codebases for maximum speed, security, and reliability.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1"></i>
+                            <span class="text-slate-300">Architect custom Point-of-Sale and inventory solutions tailored to your workflow.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1"></i>
+                            <span class="text-slate-300">Provide technical consulting to align digital infrastructure with business goals.</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/samprinc" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/samprinc" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/sam_princ1/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:Sammybett369@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sammy Kiprop</h3>
+                    <p class="text-slate-400">Full-Stack Software Engineer<br>Enterprise Solutions Architect</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-slate-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="skills.html" class="text-slate-400 hover:text-primary transition-colors">Expertise</a></li>
+                        <li><a href="projects.html" class="text-slate-400 hover:text-primary transition-colors">Solutions</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sam_princ1/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:Sammybett369@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Sammy Kiprop. All rights reserved. | Engineered for Excellence</p>
+            <div class="pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; <span id="currentYear"></span> Sammy Kiprop. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Engineered for Excellence</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
