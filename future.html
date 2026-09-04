@@ -1,594 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princ Sam | Future Aspirations</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/future.css">
+    <title>Sammy Kiprop | Solutions & Projects</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // blue-500
+                        secondary: '#1e293b', // slate-800
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Princ<span>Sam</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="childhood.html">Childhood</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="future.html" class="active">Future</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+<body class="bg-slate-900 text-slate-200 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-bold tracking-tight text-white">
+                    Sammy<span class="text-primary">Kiprop</span>
+                </a>
+                
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                    <li><a href="skills.html" class="text-slate-300 hover:text-white transition-colors">Expertise</a></li>
+                    <li><a href="projects.html" class="text-primary font-medium">Solutions</a></li>
+                    <li><a href="contact.html" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Future Aspirations</h1>
-            <p>Vision, Goals, and Legacy for Impact</p>
+    <section class="pt-32 pb-16 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Enterprise Solutions</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">Scalable software architecture, B2B platforms, and full-stack systems engineered for real-world impact.</p>
         </div>
     </section>
 
-    <!-- Future Content -->
-    <section class="future">
-        <div class="container">
-            <!-- Vision Statement -->
-            <div class="vision-statement animate-on-scroll">
-                <div class="vision-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="vision-content">
-                    <h2>My Ultimate Vision</h2>
-                    <p class="vision-text">To become a CEO & Founder of a technology company that creates innovative solutions, empowers Kenyan communities, and leaves a lasting legacy of positive impact through faith-driven leadership and engineering excellence.</p>
-                    <div class="vision-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-rocket"></i>
-                            <span>Innovation</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-hands-helping"></i>
-                            <span>Empowerment</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-heart"></i>
-                            <span>Impact</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-cross"></i>
-                            <span>Faith-Driven</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Career Goals -->
-            <div class="career-goals animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-bullseye"></i> Career Goals</h2>
-                    <p class="section-subtitle">Strategic Objectives for Professional Growth</p>
-                </div>
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 
-                <div class="goals-timeline">
-                    <div class="timeline-path"></div>
-                    
-                    <div class="goal-milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>2028: Complete University</h3>
-                            <p>Graduate with BSc in Software Engineering from Kirinyaga University. Build portfolio with impactful projects that solve real-world problems.</p>
-                            <div class="milestone-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">100%</div>
-                                    <div class="metric-label">Degree Completion</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">10+</div>
-                                    <div class="metric-label">Portfolio Projects</div>
-                                </div>
+                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-video text-2xl text-blue-400"></i>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Source"><i class="fab fa-github text-xl"></i></a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="goal-milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>2025: Industry Experience</h3>
-                            <p>Work in a leading tech company to understand industry dynamics, build professional network, and save capital for future ventures.</p>
-                            <div class="milestone-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">2+</div>
-                                    <div class="metric-label">Years Experience</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">50+</div>
-                                    <div class="metric-label">Professional Contacts</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="goal-milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>2026: Launch First Venture</h3>
-                            <p>Start a tech company focusing on solving one key problem in Kenyan banking or education sector with a minimum viable product.</p>
-                            <div class="milestone-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">1</div>
-                                    <div class="metric-label">Tech Company</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">MVP</div>
-                                    <div class="metric-label">Launched</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="goal-milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>2027: Scale & Expand</h3>
-                            <p>Grow the company, hire team, expand solutions to multiple sectors. Begin formal mentorship program for aspiring technologists.</p>
-                            <div class="milestone-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">5+</div>
-                                    <div class="metric-label">Team Members</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">2</div>
-                                    <div class="metric-label">Sectors Served</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="goal-milestone highlight">
-                        <div class="milestone-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>2028: Mentorship Milestone</h3>
-                            <p>Reach goal of mentoring 1,000+ students. Company becomes established player in Kenyan tech ecosystem with sustainable impact.</p>
-                            <div class="milestone-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">1,000+</div>
-                                    <div class="metric-label">Students Mentored</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">Profitable</div>
-                                    <div class="metric-label">Sustainable Business</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sectors to Disrupt -->
-            <div class="sectors-section animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-university"></i> Sectors to Transform</h2>
-                    <p class="section-subtitle">Target Areas for Technological Innovation</p>
-                </div>
-                
-                <div class="sectors-grid">
-                    <div class="sector-card">
-                        <div class="sector-icon">
-                            <i class="fas fa-money-check-alt"></i>
-                        </div>
-                        <h3>Banking & Finance</h3>
-                        <p>Revolutionize financial services through accessible digital solutions, mobile banking innovations, and financial literacy platforms for underserved communities.</p>
-                        <div class="sector-challenges">
-                            <span class="challenge">Accessibility</span>
-                            <span class="challenge">Security</span>
-                            <span class="challenge">Financial Inclusion</span>
-                        </div>
-                    </div>
-
-                    <div class="sector-card">
-                        <div class="sector-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Education</h3>
-                        <p>Transform learning through technology-enabled education platforms, skill development programs, and accessible learning resources for students across Kenya.</p>
-                        <div class="sector-challenges">
-                            <span class="challenge">Access</span>
-                            <span class="challenge">Quality</span>
-                            <span class="challenge">Relevance</span>
-                        </div>
-                    </div>
-
-                    <div class="sector-card">
-                        <div class="sector-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3>Institutional Systems</h3>
-                        <p>Modernize government and institutional systems through efficient digital solutions, process automation, and transparent service delivery platforms.</p>
-                        <div class="sector-challenges">
-                            <span class="challenge">Efficiency</span>
-                            <span class="challenge">Transparency</span>
-                            <span class="challenge">Service Delivery</span>
-                        </div>
-                    </div>
-
-                    <div class="sector-card">
-                        <div class="sector-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <h3>Community Development</h3>
-                        <p>Empower communities through technology solutions that address local challenges, create opportunities, and foster sustainable development.</p>
-                        <div class="sector-challenges">
-                            <span class="challenge">Empowerment</span>
-                            <span class="challenge">Sustainability</span>
-                            <span class="challenge">Community Impact</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mentorship Mission -->
-            <div class="mentorship-goal animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-users"></i> Mentorship Mission</h2>
-                    <p class="section-subtitle">Guiding the Next Generation of Technologists</p>
-                </div>
-                
-                <div class="mentorship-content">
-                    <div class="mentorship-stats">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <div class="stat-number" data-count="1000">0</div>
-                            <div class="stat-label">Students to Mentor by 2028</div>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Virtual Meeting Infrastructure</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Engineered a highly scalable virtual meeting and educational platform for PataSpace Academy. Architected the real-time communication layer handling multiple concurrent user streams with minimal latency.</p>
                         
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div class="stat-number" data-count="5">0</div>
-                            <div class="stat-label">Years to Achieve Goal</div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Next.js</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Mediasoup</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Redis</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Socket.IO</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Prisma</span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-leaf text-2xl text-green-400"></i>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Live"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">SmartSeason Field Monitor</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Built a comprehensive full-stack field data monitoring system. Configured CORS, managed static assets, and developed robust database seeding for seamless live deployment and data tracking.</p>
                         
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="stat-number" data-count="200">0</div>
-                            <div class="stat-label">Students per Year Target</div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Django</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">React</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">REST APIs</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">PostgreSQL</span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-cash-register text-2xl text-purple-400"></i>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Source"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Enterprise POS API</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Architected core point-of-sale API endpoints for a commercial salon management system. Implemented complex SQL transaction logic and data transfer objects to ensure secure and accurate order processing.</p>
                         
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div class="stat-number" data-count="4">0</div>
-                            <div class="stat-label">Mentorship Channels</div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">C#</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">.NET Core</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">SQL Transactions</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="mentorship-details">
-                        <p>I believe in lifting as I climb. My goal to mentor 1,000+ students by 2028 stems from my conviction that knowledge shared is knowledge multiplied. Through various channels, I aim to empower the next generation of Kenyan technologists.</p>
+                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-hard-hat text-2xl text-orange-400"></i>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Live"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Corporate Digital Presence</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">Modernized the digital storefront for Super Phanity Construction Works Ltd. Engineered responsive equipment media galleries and implemented dynamic floating contact controls to increase client lead conversions.</p>
                         
-                        <div class="mentorship-channels">
-                            <div class="channel">
-                                <div class="channel-icon">
-                                    <i class="fas fa-laptop"></i>
-                                </div>
-                                <div class="channel-content">
-                                    <h4>Workshops & Training</h4>
-                                    <p>Regular coding workshops and technical training sessions for students at different skill levels.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="channel">
-                                <div class="channel-icon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div class="channel-content">
-                                    <h4>One-on-One Guidance</h4>
-                                    <p>Personal mentorship sessions for career guidance, project feedback, and skill development.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="channel">
-                                <div class="channel-icon">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div class="channel-content">
-                                    <h4>Learning Resources</h4>
-                                    <p>Creating and sharing educational content, tutorials, and project guides for self-paced learning.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="channel">
-                                <div class="channel-icon">
-                                    <i class="fas fa-network-wired"></i>
-                                </div>
-                                <div class="channel-content">
-                                    <h4>Community Building</h4>
-                                    <p>Building a supportive tech community where mentees can connect, collaborate, and grow together.</p>
-                                </div>
-                            </div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">CSS3</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Responsive Design</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">UI/UX Optimization</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Influences -->
-            <div class="influences-section animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-star"></i> Key Influences</h2>
-                    <p class="section-subtitle">Leaders Who Shape My Vision</p>
-                </div>
-                
-                <div class="influences-grid">
-                    <div class="influence-card">
-                        <div class="influence-image">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="influence-details">
-                            <h3>Dr. Myles Munroe</h3>
-                            <div class="influence-role">Leadership & Purpose Inspiration</div>
-                            <p>Dr. Myles Munroe's teachings on purpose, leadership, and maximizing potential have profoundly shaped my vision. His emphasis on discovering and fulfilling one's God-given purpose aligns with my belief that technology should serve humanity and reflect divine creativity.</p>
-                            <div class="influence-quote">
-                                <i class="fas fa-quote-left"></i>
-                                "The greatest tragedy in life is not death, but a life without purpose."
-                                <i class="fas fa-quote-right"></i>
-                                <div class="quote-author">- Dr. Myles Munroe</div>
-                            </div>
-                            <div class="influence-impact">
-                                <span class="impact-tag">Purpose Discovery</span>
-                                <span class="impact-tag">Leadership Principles</span>
-                                <span class="impact-tag">Kingdom Mindset</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="influence-card">
-                        <div class="influence-image">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="influence-details">
-                            <h3>Tech Innovators</h3>
-                            <div class="influence-role">Engineering Excellence</div>
-                            <p>Leaders in technology who have built scalable systems and created products that serve millions inspire my approach to engineering discipline, user-centric design, and solving complex problems through elegant solutions.</p>
-                            <div class="influence-impact">
-                                <span class="impact-tag">Engineering Discipline</span>
-                                <span class="impact-tag">Scalability</span>
-                                <span class="impact-tag">Innovation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="influence-card">
-                        <div class="influence-image">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="influence-details">
-                            <h3>Community Leaders</h3>
-                            <div class="influence-role">Service & Impact</div>
-                            <p>Individuals in my community and beyond who have dedicated their lives to serving others, creating opportunities, and making lasting positive impacts inspire my commitment to community-focused technology solutions.</p>
-                            <div class="influence-impact">
-                                <span class="impact-tag">Service</span>
-                                <span class="impact-tag">Community Impact</span>
-                                <span class="impact-tag">Social Responsibility</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Faith Mission -->
-            <div class="faith-mission animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-pray"></i> Faith Mission</h2>
-                    <p class="section-subtitle">Integrating Faith with Technology</p>
-                </div>
-                
-                <div class="faith-grid">
-                    <div class="faith-pillar">
-                        <div class="pillar-icon">
-                            <i class="fas fa-church"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h4>Serve God Through Technology</h4>
-                            <p>My primary purpose is to serve God through my talents and opportunities. I believe technology can be a platform for ministry, service, and reflecting God's creativity in solving human problems.</p>
-                            <div class="pillar-actions">
-                                <span class="action">Prayerful Development</span>
-                                <span class="action">Ethical Technology</span>
-                                <span class="action">God-Glorifying Work</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faith-pillar">
-                        <div class="pillar-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h4>Impact Communities Positively</h4>
-                            <p>Use technology to solve community challenges, create employment opportunities, and improve quality of life for Kenyans. Technology should empower, not replace; enhance, not complicate.</p>
-                            <div class="pillar-actions">
-                                <span class="action">Community Solutions</span>
-                                <span class="action">Job Creation</span>
-                                <span class="action">Quality of Life</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faith-pillar">
-                        <div class="pillar-icon">
-                            <i class="fas fa-cross"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h4>Bring Many to Christ</h4>
-                            <p>Live as a testimony of God's grace and use my platform to share the gospel, both through words and through Christ-like service. Excellence in work as an act of worship.</p>
-                            <div class="pillar-actions">
-                                <span class="action">Christian Testimony</span>
-                                <span class="action">Service as Worship</span>
-                                <span class="action">Excellence in Work</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faith-pillar">
-                        <div class="pillar-icon">
-                            <i class="fas fa-bible"></i>
-                        </div>
-                        <div class="pillar-content">
-                            <h4>Biblical Principles in Business</h4>
-                            <p>Run technology ventures with integrity, fairness, and compassion. Apply biblical principles of stewardship, justice, and love in all business dealings and technological innovations.</p>
-                            <div class="pillar-actions">
-                                <span class="action">Business Integrity</span>
-                                <span class="action">Ethical Practices</span>
-                                <span class="action">Compassionate Leadership</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Legacy -->
-            <div class="legacy-section animate-on-scroll">
-                <div class="section-header">
-                    <h2><i class="fas fa-mountain"></i> Desired Legacy</h2>
-                    <p class="section-subtitle">The Mark I Hope to Leave</p>
-                </div>
-                
-                <div class="legacy-content">
-                    <div class="legacy-image">
-                        <div class="image-placeholder-small">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                    </div>
-                    <div class="legacy-items">
-                        <div class="legacy-item">
-                            <div class="legacy-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <div class="legacy-details">
-                                <h4>Empowering Technology</h4>
-                                <p>Build systems that empower rather than replace, enhance rather than complicate, and connect rather than isolate people and communities.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="legacy-item">
-                            <div class="legacy-icon">
-                                <i class="fas fa-infinity"></i>
-                            </div>
-                            <div class="legacy-details">
-                                <h4>Lasting Impact</h4>
-                                <p>Create solutions that outlive me, continuing to serve communities and inspire future generations of innovators long after I'm gone.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="legacy-item">
-                            <div class="legacy-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="legacy-details">
-                                <h4>Mentorship Chain</h4>
-                                <p>Establish a culture of mentorship where those I mentor go on to mentor others, creating exponential impact through knowledge sharing.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="legacy-item">
-                            <div class="legacy-icon">
-                                <i class="fas fa-church"></i>
-                            </div>
-                            <div class="legacy-details">
-                                <h4>Faith Integration</h4>
-                                <p>Demonstrate that excellence in technology and strong faith are not just compatible but complementary, inspiring others to integrate their faith with their work.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="legacy-item">
-                            <div class="legacy-icon">
-                                <i class="fas fa-flag"></i>
-                            </div>
-                            <div class="legacy-details">
-                                <h4>Kenyan Innovation</h4>
-                                <p>Contribute to positioning Kenya as a hub for technology innovation that solves African challenges with African solutions.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="future-cta animate-on-scroll">
-                <div class="cta-content">
-                    <h3>Join Me on This Journey</h3>
-                    <p>The future I envision is not just about personal success, but about collective growth, community impact, and leaving a legacy that inspires others to use technology for good. This vision requires collaboration, support, and shared commitment.</p>
-                    <p>Whether you're a potential collaborator, mentor, investor, or someone who shares this vision, I invite you to join me in building technology that transforms lives, empowers communities, and creates lasting positive impact in Kenya and beyond.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary">
-                            <i class="fas fa-handshake"></i> Collaborate with Me
-                        </a>
-                        <a href="skills.html" class="btn btn-secondary">
-                            <i class="fas fa-code"></i> Explore My Skills
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Princ Sam</h3>
-                    <p>BSc Software Engineering Student<br>Kirinyaga University</p>
+    <section class="py-20 border-t border-slate-800 bg-slate-900/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary/5"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Scale Your Infrastructure?</h2>
+            <p class="text-xl text-slate-400 mb-10">From optimizing legacy code to building secure APIs from scratch, let's architect a solution that drives your business forward.</p>
+            <a href="contact.html" class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/30">
+                <i class="fas fa-handshake"></i> Let's Discuss Your Project
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sammy Kiprop</h3>
+                    <p class="text-slate-400">Full-Stack Software Engineer<br>Enterprise Solutions Architect</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="childhood.html">Childhood</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="skills.html">Skills</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-slate-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="skills.html" class="text-slate-400 hover:text-primary transition-colors">Expertise</a></li>
+                        <li><a href="projects.html" class="text-slate-400 hover:text-primary transition-colors">Solutions</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-primary transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/samprinc"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/samprinc"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/sam_princ1/"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:Sammybett369@gmail.com"><i class="fas fa-envelope"></i></a>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/samprinc" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sam_princ1/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:Sammybett369@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Princ Sam. All rights reserved. | Designed with passion and purpose</p>
+            <div class="pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">&copy; <span id="currentYear"></span> Sammy Kiprop. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Engineered for Excellence</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
