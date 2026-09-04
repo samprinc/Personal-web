@@ -32,3 +32,18 @@ To run this environment locally without deployment:
 1. Clone the repository:
    ```bash
    git clone [https://github.com/samprinc/Personal-web.git](https://github.com/samprinc/Personal-web.git)
+
+1. Navigate into the directory:
+
+```bash
+cd Personal-web
+```
+2.Serve via a local development server (e.g., VS Code Live Server, or Python HTTP server):
+
+```Bash
+python -m http.server 8000
+```
+3. Access at http://localhost:8000
+
+🛡️ License
+Designed and engineered by Sammy Kiprop. All rights reserved.
