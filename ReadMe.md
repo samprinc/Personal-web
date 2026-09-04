@@ -1,196 +1,34 @@
-# Princ Sam — Personal Website
+# Sammy Kiprop | Enterprise Solutions Portfolio
 
-A clean, professional personal website built to tell the story of **Princ Sam**, a second‑year **BSc Software Engineering** student at **Kirinyaga University**. The site blends storytelling with modern web standards to present background, skills, values, and future ambitions.
+A modern, high-performance portfolio engineered to showcase full-stack development, systems architecture, and B2B software solutions. Built with a focus on clean UI/UX, responsive design, and scalable code structures.
 
----
-
-## 📌 Project Overview
-This project showcases Princ Sam’s journey—from childhood and education to skills, aspirations, and ways to connect—using a simple, accessible, and responsive web stack. It is suitable for **portfolio use**, **personal branding**, and **university submission**.
+## 🚀 Live Deployment
+**Production URL:** [https://samprinc.github.io/Personal-web/](https://samprinc.github.io/Personal-web/)
 
 ---
 
-## 🗂️ Website Pages
-The website consists of **six (6)** main pages:
+## 🏗️ Architecture & Tech Stack
+This project utilizes a utility-first CSS framework to eliminate external stylesheet bloat, ensuring maximum performance and maintainability.
 
-1. **Homepage (`index.html`)**  
-   Introduction, interests, guiding principles, and goals.
-
-2. **Childhood (`childhood.html`)**  
-   Early life in Eldoret, family background, and formative responsibilities.
-
-3. **Education (`education.html`)**  
-   Academic journey from primary school to university.
-
-4. **Skills & Talents (`skills.html`)**  
-   Technical skills, soft skills, interests, and personal strengths.
-
-5. **Future Aspirations (`future.html`)**  
-   Career vision, mentorship mission, and long‑term legacy.
-
-6. **Contact (`contact.html`)**  
-   Contact details and a validated contact form.
+* **Frontend:** HTML5, Tailwind CSS (via CDN for rapid deployment)
+* **Typography:** Google Fonts (Inter)
+* **Icons:** FontAwesome 6.4
+* **Design System:** Custom Dark Theme (Slate/Blue) optimized for premium B2B client acquisition.
 
 ---
 
-## ⚙️ Technologies Used
-- **HTML5** — Semantic, accessible markup
-- **CSS3** — Responsive layout using Flexbox & Grid
-- **JavaScript** — Interactivity and form validation
-- **Font Awesome** — Icons
-- **Google Fonts** — Poppins & Raleway
+## 🗂️ Core Views
+
+1.  **`index.html` (Professional Overview):** High-level summary of full-stack capabilities, business value propositions, and core competencies.
+2.  **`skills.html` (Technical Expertise):** Detailed breakdown of frontend architecture, backend engineering, and devops/automation tools (including Docker, n8n, and Nextcloud).
+3.  **`projects.html` (Enterprise Solutions):** Technical case studies of scalable systems built, including API development, POS systems, and automated field monitors.
+4.  **`contact.html` (Client Onboarding):** Direct communication channels and project inquiry form for B2B consulting.
 
 ---
 
-## 📁 Project Structure
-```
-personal-website/
-│
-├── index.html
-├── childhood.html
-├── education.html
-├── skills.html
-├── future.html
-├── contact.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── images/        # Optional image assets
-│
-└── README.md
-```
+## ⚙️ Local Development Environment
 
----
-
-## ✨ Features
-- Fully **responsive design** (desktop, tablet, mobile)
-- **Mobile-friendly navigation** with hamburger menu
-- **JavaScript form validation** for user input
-- Smooth hover effects and transitions
-- Consistent color scheme and typography
-- Semantic HTML for **accessibility and SEO**
-
----
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: `#2c3e50` (Dark Blue)
-- **Secondary**: `#3498db` (Blue)
-- **Accent**: `#e74c3c` (Red)
-- **Light**: `#ecf0f1` (Light Gray)
-- **Dark**: `#2c3e50` (Dark Blue)
-
-### Typography
-- **Headings**: Raleway (600)
-- **Body Text**: Poppins (300–400)
-
----
-
-## 🧠 JavaScript Functionality
-- Mobile navigation toggle
-- Real‑time contact form validation
-- Smooth scrolling for internal links
-- Interactive skill animations
-- Automatic copyright year update
-
----
-
-## 🌐 Web Hosting & Domain
-
-### What Is a Domain Name?
-A domain name is a human‑readable address that points to a website’s IP address.
-
-**Examples:**
-- `princsam.dev`
-- `princsam.com`
-
-Domains make websites easier to remember and access.
-
----
-
-## 🚀 Deployment with GitHub Pages
-
-### Step 1: Create a GitHub Account
-- Visit GitHub and sign up (free)
-
-### Step 2: Create a Repository
-- Repository name: `personal-website` or `princsam-website`
-- Set visibility to **Public**
-
-### Step 3: Upload Project Files
-- Upload all HTML, CSS, JS, and asset files
-- Commit changes to the `main` branch
-
-### Step 4: Enable GitHub Pages
-1. Open **Repository Settings**
-2. Navigate to **Pages**
-3. Set source to **main branch**
-4. Save
-
-Your site will be live at:
-```
-https://samprinc.github.io/Personal-web/
-```
-
-GitHub Pages automatically uses `index.html` as the homepage.
-
----
-
-### Custom Domain (Optional)
-1. Purchase a domain (Namecheap, GoDaddy, etc.)
-2. Add the domain under **GitHub Pages → Custom Domain**
-3. Update DNS records to point to GitHub Pages
-
----
-
-## 🛠️ How to Use This Project
-
-### Local Development
-1. Download or clone the repository
-2. Open `index.html` in a browser
-3. Edit HTML, CSS, or JS files
-4. Refresh browser to view changes
-
-### University Submission
-- Confirm all links and pages work
-- Validate HTML & CSS
-- Maintain clean folder structure
-- Include this `README.md`
-- Submit GitHub Pages live URL
-
----
-
-## 🌍 Browser Compatibility
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Microsoft Edge (latest)
-- Mobile browsers
-
----
-
-## 🔮 Future Enhancements
-- Add real photographs
-- Dark mode toggle
-- Blog section
-- Portfolio/project showcase
-- Multi‑language support
-
----
-
-## 🙌 Credits
-- **Student**: Princ Sam
-- **University**: Kirinyaga University
-- **Course**: BSc Software Engineering
-- **Fonts**: Google Fonts (Poppins, Raleway)
-- **Icons**: Font Awesome
-
----
-
-## 📄 License
-This project is created for **educational and portfolio purposes** as part of a university assignment.
-
+To run this environment locally without deployment:
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/samprinc/Personal-web.git](https://github.com/samprinc/Personal-web.git)
