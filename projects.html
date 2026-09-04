@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sammy Kiprop | Solutions & Projects</title>
+    <title>Sammy Kiprop | Technical Expertise</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#3b82f6', // blue-500
-                        secondary: '#1e293b', // slate-800
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: { primary: '#3b82f6', secondary: '#1e293b', }
                 }
             }
         }
@@ -38,9 +31,8 @@
                 
                 <ul class="hidden md:flex space-x-8">
                     <li><a href="index.html" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
-                    <li><a href="skills.html" class="text-slate-300 hover:text-white transition-colors">Expertise</a></li>
-                    <li><a href="projects.html" class="text-primary font-medium">Solutions</a></li>
+                    <li><a href="skills.html" class="text-primary font-medium">Expertise</a></li>
+                    <li><a href="projects.html" class="text-slate-300 hover:text-white transition-colors">Solutions</a></li>
                     <li><a href="contact.html" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
                 </ul>
 
@@ -55,117 +47,181 @@
 
     <section class="pt-32 pb-16 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Enterprise Solutions</h1>
-            <p class="text-lg text-slate-400 max-w-2xl mx-auto">Scalable software architecture, B2B platforms, and full-stack systems engineered for real-world impact.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Technical Expertise</h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">The architecture, languages, and frameworks I use to build secure, scalable enterprise systems.</p>
         </div>
     </section>
 
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i class="fas fa-layer-group text-primary"></i> Technology Stack
+                </h2>
+                <div class="h-1 w-16 bg-primary mt-4 rounded"></div>
+            </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-video text-2xl text-blue-400"></i>
-                            </div>
-                            <div class="flex gap-3">
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Source"><i class="fab fa-github text-xl"></i></a>
-                            </div>
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-2xl text-blue-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Virtual Meeting Infrastructure</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Engineered a highly scalable virtual meeting and educational platform for PataSpace Academy. Architected the real-time communication layer handling multiple concurrent user streams with minimal latency.</p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Next.js</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Mediasoup</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Redis</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Socket.IO</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Prisma</span>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white">Frontend Architecture</h3>
                     </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">React.js & Next.js</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">JavaScript & TypeScript</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">Tailwind CSS & HTML5</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-blue-400 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-leaf text-2xl text-green-400"></i>
-                            </div>
-                            <div class="flex gap-3">
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Live"><i class="fas fa-external-link-alt text-xl"></i></a>
-                            </div>
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-server text-2xl text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">SmartSeason Field Monitor</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Built a comprehensive full-stack field data monitoring system. Configured CORS, managed static assets, and developed robust database seeding for seamless live deployment and data tracking.</p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Django</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">React</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">REST APIs</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">PostgreSQL</span>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white">Backend Engineering</h3>
                     </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">C# & ASP.NET Core</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">Python & Django REST Framework</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">Node.js & Express</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-cash-register text-2xl text-purple-400"></i>
-                            </div>
-                            <div class="flex gap-3">
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Source"><i class="fab fa-github text-xl"></i></a>
-                            </div>
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-network-wired text-2xl text-purple-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Enterprise POS API</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Architected core point-of-sale API endpoints for a commercial salon management system. Implemented complex SQL transaction logic and data transfer objects to ensure secure and accurate order processing.</p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">C#</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">.NET Core</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">PostgreSQL</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">SQL Transactions</span>
-                        </div>
+                        <h3 class="text-xl font-semibold text-white">DevOps & Automation</h3>
                     </div>
-                </div>
-
-                <div class="bg-slate-800/40 rounded-2xl border border-slate-700 overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group">
-                    <div class="p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-hard-hat text-2xl text-orange-400"></i>
+                    <ul class="space-y-4">
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">n8n (Workflow Automation)</span>
                             </div>
-                            <div class="flex gap-3">
-                                <a href="#" class="text-slate-400 hover:text-white transition-colors" title="View Live"><i class="fas fa-external-link-alt text-xl"></i></a>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width: 85%"></div>
                             </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Corporate Digital Presence</h3>
-                        <p class="text-slate-400 mb-6 leading-relaxed">Modernized the digital storefront for Super Phanity Construction Works Ltd. Engineered responsive equipment media galleries and implemented dynamic floating contact controls to increase client lead conversions.</p>
-                        
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">CSS3</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">Responsive Design</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-slate-700 text-slate-300 rounded-full">UI/UX Optimization</span>
-                        </div>
-                    </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">Nextcloud (Self-Hosting)</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-slate-300 font-medium">Docker, Git & Linux Server Admin</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-purple-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section class="py-20 border-t border-slate-800 bg-slate-900/50 relative overflow-hidden">
-        <div class="absolute inset-0 bg-primary/5"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Scale Your Infrastructure?</h2>
-            <p class="text-xl text-slate-400 mb-10">From optimizing legacy code to building secure APIs from scratch, let's architect a solution that drives your business forward.</p>
-            <a href="contact.html" class="inline-flex justify-center items-center gap-2 px-8 py-4 bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/30">
-                <i class="fas fa-handshake"></i> Let's Discuss Your Project
-            </a>
+    <section class="py-20 bg-slate-800/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i class="fas fa-project-diagram text-primary"></i> Professional Competencies
+                </h2>
+                <div class="h-1 w-16 bg-primary mt-4 rounded"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex gap-4">
+                    <i class="fas fa-shield-alt text-2xl text-primary mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Secure System Architecture</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Designing complex PostgreSQL databases, implementing JWT authentication, and securing API endpoints against common B2B vulnerabilities.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex gap-4">
+                    <i class="fas fa-robot text-2xl text-primary mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Business Automation</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Utilizing tools like n8n and Nextcloud to build self-hosted, automated data pipelines that reduce manual overhead and cut SaaS costs.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex gap-4">
+                    <i class="fas fa-users-cog text-2xl text-primary mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Technical Leadership</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Directing development teams, managing code reviews, and structuring curriculum for technical academies to enforce industry best practices.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 flex gap-4">
+                    <i class="fas fa-tachometer-alt text-2xl text-primary mt-1"></i>
+                    <div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Performance Optimization</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Optimizing SQL queries, configuring local development environments (XAMPP, Vite, pnpm), and streamlining asset delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Engineering Philosophy</h2>
+            <p class="text-xl text-slate-400 italic max-w-3xl mx-auto leading-relaxed border-l-4 border-primary pl-6">
+                "Code is written for machines to execute, but for humans to maintain. I focus on building systems that are not only performant and scalable, but clean, documented, and resilient enough to adapt to changing business needs."
+            </p>
         </div>
     </section>
 
